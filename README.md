@@ -1,36 +1,49 @@
-# Isaac Griffiths - Personal [Website](https://isaacgriffiths.com)
+# isaacgriffiths.com
 
-A minimalist personal website showcasing my professional identity in tech and automation.
+Personal CV site for Isaac Griffiths — AI and agentic engineer.
 
-## Features
+Next.js (static export) + Tailwind CSS 4, served from Cloudflare Pages.
+`isaacgriffiths.co.uk` redirects here at the Cloudflare edge.
 
-- Modern, Apple-inspired typography using Inter font
-- Custom cursor with light effect on desktop devices
-- Responsive design that adapts to all screen sizes
-- Social media links to connect across platforms
-- Clean, distraction-free interface
+## Editing content
 
-## Technologies Used
+Everything on the page comes from `content/profile.ts`. Change the facts there,
+not in the components — the components only decide how a fact is presented.
 
-- HTML5
-- CSS3 with Tailwind utility classes
-- Vanilla JavaScript for interactive elements
-- Responsive design without frameworks
-- Custom SVG icons for social links
+## Running it
 
-## Development
+```bash
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # static export into out/
+```
 
-The site intentionally uses minimal dependencies, making it easy to maintain and fast to load. The custom cursor effect is disabled on mobile devices for better user experience.
+To exercise the contact endpoint locally, the Pages Function needs the Workers
+runtime rather than `next dev`:
 
-## Connect
+```bash
+npm run build
+npx wrangler pages dev out --compatibility-date=2026-01-01
+```
 
-Feel free to connect with me on:
+## Contact form
 
-- [LinkedIn](https://www.linkedin.com/in/isaacgriffiths/)
-- [GitHub](https://github.com/isaacgriffiths)
-- [TikTok](https://www.tiktok.com/@isaacgriffiths)
-- [Instagram](https://www.instagram.com/isaacrgriffiths/)
+`functions/api/contact.ts` runs as a Cloudflare Pages Function and sends through
+Resend. Set these in the Pages project (Settings → Environment variables):
 
-## License
+| Variable               | Required | Purpose                                          |
+| ---------------------- | -------- | ------------------------------------------------ |
+| `RESEND_API_KEY`       | yes      | Resend API key                                   |
+| `CONTACT_TO`           | yes      | Inbox that receives the message                  |
+| `CONTACT_FROM`         | yes      | Verified Resend sender on the domain             |
+| `TURNSTILE_SECRET_KEY` | no       | Turns on bot verification when present           |
 
-© 2023 Isaac Griffiths. All rights reserved. 
+Without them the endpoint returns a clear 503 and the form tells the visitor to
+email directly instead.
+
+## Deploying
+
+The Pages project `website` builds from this repository.
+
+- Build command: `npm run build`
+- Output directory: `out`
