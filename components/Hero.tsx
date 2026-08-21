@@ -13,11 +13,24 @@ export default function Hero() {
       </div>
 
       <div className="reveal glass w-full max-w-2xl rounded-2xl px-6 py-10 text-center sm:px-12 sm:py-14">
-        <p className="key">{person.billing}</p>
+        {/* The source is a square headshot, so the circle is framed by scaling
+            about a point above centre — otherwise the crop lands on his collar. */}
+        <div className="mx-auto mb-7 h-28 w-28 overflow-hidden rounded-full ring-1 ring-white/25 sm:h-32 sm:w-32">
+          {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimiser */}
+          <img
+            src={person.photo}
+            alt={person.name}
+            width={2000}
+            height={2000}
+            className="h-full w-full origin-[50%_26%] scale-[1.45] object-cover saturate-[0.78]"
+          />
+        </div>
 
-        <h1 className="display mt-5 text-[2.75rem] leading-[0.95] sm:text-6xl md:text-7xl">
+        <h1 className="display text-[2.75rem] leading-[0.95] sm:text-6xl md:text-7xl">
           {person.name}
         </h1>
+
+        <p className="key mt-5 block">{person.billing}</p>
 
         <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-ivory/80 sm:text-lg">
           {person.tagline}
