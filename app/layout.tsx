@@ -23,7 +23,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "Forward deployed AI engineer at GSK R&D Tech. I embed with stakeholders and build agentic systems, dashboards and internal tools that hold up in regulated operations.";
+  "Agentic engineer at GSK R&D Tech, forward deployed. I build agent workflows, reverse-engineer what has no source left, and ship internal tools that hold up in regulated operations. Buckinghamshire, working across London and the South East.";
 
 const title = `${person.name} — ${person.billing}`;
 

@@ -97,7 +97,7 @@ export default function Nav() {
         <p className="font-mono text-[0.625rem] leading-relaxed text-faint">
           {person.location}
           <br />
-          Open to conversations
+          {person.reach}
         </p>
       </nav>
 

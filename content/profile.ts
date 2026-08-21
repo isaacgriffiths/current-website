@@ -6,9 +6,12 @@ export const person = {
   initials: "IG",
   role: "AI & Agentic Engineer",
   /** How he sells himself, as distinct from what his badge says. */
-  billing: "Forward deployed AI engineer",
+  billing: "Agentic engineer, forward deployed",
   employer: "GSK R&D Tech",
-  location: "Hertfordshire, UK",
+  location: "Buckinghamshire, UK",
+  /** Where he will actually work, which matters more to a recruiter than where he sleeps. */
+  reach: "London & the South East",
+  commute: "Four years commuting to Stevenage, so the South East is well within reach.",
   photo: "/isaac.jpg",
   tagline:
     "I build agentic systems that make enterprise operations ask better questions. Usually sat next to the people who have the problem.",
@@ -70,17 +73,17 @@ export const experience: ExperienceRecord[] = [
     points: [
       "Built an intelligent triage system that asks context-aware follow-up questions at intake, so requests arrive complete and route correctly the first time.",
       "Contributed to one of the first truly agentic systems progressing towards production in R&D Tech, from prototype through stakeholder review.",
-      "Stood up application dashboards for stakeholders in days rather than quarters, pair-building live in the session so requirements were settled by demonstration instead of documentation.",
-      "Reverse-engineered a legacy application and supported its like-for-like redevelopment, covering solution design, testing and iterative improvement.",
+      "Building an agentic booking system with dashboards for the teams who own the resources, pair-building with stakeholders so requirements are settled by demonstration rather than documentation.",
+      "Reverse-engineered an internal application whose source code had been lost, confirmed its behaviour rule by rule with the scientists who used it daily, and rebuilt a compliant replacement.",
       "Worked directly with technical and business stakeholders on requirements, user testing, and adoption of practical AI across the function.",
     ],
     tags: [
-      "Forward deployed",
       "Agentic workflows",
-      "Dashboards",
       "LangGraph",
+      "Reverse engineering",
+      "Forward deployed",
       "Python",
-      "Next.js",
+      "TypeScript",
       "n8n",
     ],
   },
@@ -105,23 +108,33 @@ export const experience: ExperienceRecord[] = [
 
 export const expertise = [
   {
-    title: "Forward deployed by default",
-    body: "I work next to the people who have the problem. Requirements get settled by putting something on screen in the room, not by a document that describes what everyone thought they agreed.",
+    title: "Agentic systems, every day",
+    body: "This is the centre of what I do. Agent workflows that hold up outside a demo: tool use, structured outputs, sensible behaviour when something fails, and a route from prototype to something an operations team will actually accept.",
     points: [
-      "Embedded delivery with business and technical stakeholders",
-      "Pair-building live, in the session",
-      "Application dashboards standing up in days",
-      "AI-assisted prototyping with the review discipline to match",
+      "Agent workflow design with LangChain and LangGraph",
+      "Context-aware intake, interpretation and routing",
+      "Prompt engineering with evaluation in the loop",
+      "Prototype, stakeholder review, production readiness",
     ],
   },
   {
-    title: "Agentic systems that reach users",
-    body: "Designing agent workflows that hold up outside a demo: tool use, structured outputs, sensible failure behaviour, and a path from prototype to something an operations team will actually accept.",
+    title: "Vibe coding, with the review to match",
+    body: "I write production code through AI tooling now, and I read, review and debug everything that comes out of it. That second half is the part that decides whether any of it ships.",
     points: [
-      "Agent workflow design with LangChain and LangGraph",
-      "Context-aware intake and routing",
-      "Prompt engineering with evaluation in the loop",
-      "Prototype, stakeholder review, production readiness",
+      "Claude Code, Cursor and Codex as the daily toolchain",
+      "Python and TypeScript read, reviewed and debugged",
+      "Reverse engineering when there is no source to work from",
+      "Catching what the model got wrong before a user does",
+    ],
+  },
+  {
+    title: "Forward deployed by default",
+    body: "I work next to the people who have the problem. Requirements get settled by putting something on screen in the room, not by a document describing what everyone thought they agreed.",
+    points: [
+      "Embedded delivery with business and technical stakeholders",
+      "Pair-building live, in the session",
+      "Dashboards for the teams who own the process",
+      "Behaviour verified by the people who rely on it",
     ],
   },
   {
@@ -134,30 +147,9 @@ export const expertise = [
       "Documentation people can follow under pressure",
     ],
   },
-  {
-    title: "Shipping the whole thing",
-    body: "Full-stack enough to build the interface, the API, and the automation around it — and to know what the AI-assisted parts got wrong.",
-    points: [
-      "Next.js, React, TypeScript, FastAPI, Python",
-      "n8n orchestration and integration design",
-      "GCP and Azure, GitHub-based delivery",
-      "AI-assisted development with review discipline",
-    ],
-  },
 ] as const;
 
 export const projects = [
-  {
-    title: "Dashboards built in the room",
-    context: "GSK R&D Tech",
-    problem:
-      "Teams described what they needed in a meeting, then waited weeks to discover it was not what they meant.",
-    approach:
-      "Sat with the stakeholders and built alongside them — AI-assisted prototyping to get a working dashboard on screen inside the session, then reshaped it against their reaction.",
-    result:
-      "Requirements settled by demonstration, and working dashboards in days rather than a specification cycle.",
-    tags: ["Forward deployed", "Dashboards", "Rapid prototyping"],
-  },
   {
     title: "Intelligent intake and triage",
     context: "GSK R&D Tech",
@@ -170,14 +162,25 @@ export const projects = [
     tags: ["Agentic", "Triage", "Service operations"],
   },
   {
-    title: "Legacy application rebuild",
+    title: "Rebuilding an application with no source code",
     context: "GSK R&D Tech",
     problem:
-      "A legacy application still carried real business process, with no current specification for what it actually did.",
+      "An internal application scientists relied on was falling out of policy, and its source code no longer existed. No repository, no specification, and no option to simply leave it running.",
     approach:
-      "Reverse-engineered the behaviour, worked with technical and business stakeholders to confirm it, and supported a like-for-like redevelopment.",
-    result: "A modern replacement with documented behaviour, tested against the original rather than against assumptions.",
-    tags: ["Reverse engineering", "Stakeholders", "Testing"],
+      "Reverse-engineered the behaviour from the running system and whatever documentation survived, then confirmed it rule by rule with the scientists who used it daily. Rebuilt a compliant replacement from that verified picture.",
+    result:
+      "A like-for-like replacement inside policy, with the application's behaviour written down for the first time and checked against the original by the people who depend on it.",
+    tags: ["Reverse engineering", "Legacy replacement", "Compliance", "Scientist-verified"],
+  },
+  {
+    title: "Agentic booking system",
+    context: "GSK R&D Tech",
+    problem:
+      "Booking requests arrive as plain description and have to become a real reservation against the right resource, held by the right team.",
+    approach:
+      "Building an agentic flow that interprets the request and handles the booking, with dashboards over the top for the people who own the resources.",
+    result: "In progress — my current build, and where most of the day-to-day agentic work sits.",
+    tags: ["Agentic", "Booking", "Dashboards", "In progress"],
   },
   {
     title: "Beehive monitoring, IoT",

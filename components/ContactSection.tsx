@@ -15,8 +15,9 @@ export default function ContactSection() {
         <Reveal className="h-full">
           <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
             <p className="text-[0.9375rem] leading-relaxed text-ivory/80">
-              I am open to conversations about forward deployed and agentic engineering roles,
-              particularly where the work has to survive real operations rather than a demo.
+              I am open to conversations about agentic and forward deployed engineering roles across
+              London and the South East, particularly where the work has to survive real operations
+              rather than a demo.
             </p>
             <dl className="mt-7 space-y-5 border-t border-white/10 pt-7">
               <div>
@@ -57,9 +58,12 @@ export default function ContactSection() {
               </div>
               <div>
                 <dt className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
-                  Based in
+                  Based in / working across
                 </dt>
-                <dd className="mt-1.5 text-[0.9375rem] text-muted">{person.location}</dd>
+                <dd className="mt-1.5 text-[0.9375rem] text-muted">
+                  {person.location}
+                  <span className="mt-1 block text-[0.8125rem] text-faint">{person.commute}</span>
+                </dd>
               </div>
             </dl>
           </div>
