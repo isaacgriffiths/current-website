@@ -26,19 +26,19 @@ export default function Hero() {
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href="#contact"
-            className="flex min-h-11 w-full items-center justify-center rounded-full bg-amber px-7 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-ink transition-colors hover:bg-amber-deep sm:w-auto"
+            className="btn w-full bg-accent text-ink hover:bg-accent-deep sm:w-auto"
           >
             Request my CV
           </a>
           <a
             href="#work"
-            className="flex min-h-11 w-full items-center justify-center rounded-full border border-white/20 px-7 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-ivory transition-colors hover:border-white/40 hover:bg-white/5 sm:w-auto"
+            className="btn w-full border border-white/25 text-ivory hover:border-white/45 hover:bg-white/5 sm:w-auto"
           >
             See the work
           </a>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-5 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-ivory/50">
+        <div className="mt-8 flex items-center justify-center gap-5 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-ivory/70">
           <a href={person.links.linkedin} target="_blank" rel="noreferrer" className="py-2 transition-colors hover:text-ivory">
             LinkedIn
           </a>

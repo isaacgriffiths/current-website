@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 /*
-  Palette: "cold room, warm signal".
-  A blue-cold near-black ground (the instrument bay) against warm ivory type,
-  with a single amber accent — the colour of an alert, a sample vial, and a hive.
-  One accent only. Everything else earns attention through spacing and weight.
+  Palette: "instrument readout".
+  A blue-cold near-black ground against warm ivory type, with one cold accent:
+  the pale cyan of a screen reporting a value. One accent only — everything else
+  earns attention through spacing and weight.
 */
 @theme {
   --color-ink: #0a0d13;
@@ -15,9 +15,9 @@
   --color-line-strong: #2f3a4d;
   --color-ivory: #eceae4;
   --color-muted: #8a93a5;
-  --color-faint: #5c6577;
-  --color-amber: #f0a93b;
-  --color-amber-deep: #c9822a;
+  --color-faint: #7a8499;
+  --color-accent: #7dd3fc;
+  --color-accent-deep: #4ea8ce;
 
   --font-display: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
   --font-sans: var(--font-instrument), "Helvetica Neue", Arial, sans-serif;
@@ -41,12 +41,12 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-amber);
+  background-color: var(--color-accent);
   color: var(--color-ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-amber);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -61,23 +61,45 @@ body {
   font-variation-settings: "opsz" 48;
 }
 
-/* Section keys read like log fields, because the content genuinely is a record. */
+/* Section keys read like log fields, because the content genuinely is a record.
+   The negative margin cancels the trailing letter-space so a centred key sits on
+   the true optical centre rather than half a tracking unit to its left. */
 .key {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   letter-spacing: 0.18em;
+  margin-right: -0.18em;
   text-transform: uppercase;
-  color: var(--color-amber);
+  color: var(--color-accent);
 }
 
-/* Hero atmosphere: slow-drifting warm aurora, amber-led so it is not a copy of
-   anyone else's purple. Sits behind the glass card and fades into the page. */
+/* Shared pill button. text-indent does the same optical correction as above,
+   for text centred inside a flex box rather than by text-align. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding-inline: 1.75rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-indent: 0.08em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Hero atmosphere: a slow cold bloom — cyan through steel into midnight, so the
+   format is shared with the reference site and the hue is not. */
 .aurora {
   background:
-    radial-gradient(55% 50% at 18% 28%, rgba(240, 169, 59, 0.5), transparent 62%),
-    radial-gradient(48% 46% at 78% 26%, rgba(214, 72, 120, 0.42), transparent 64%),
-    radial-gradient(62% 58% at 52% 78%, rgba(92, 62, 196, 0.45), transparent 66%),
-    radial-gradient(38% 38% at 88% 72%, rgba(240, 169, 59, 0.3), transparent 62%);
+    radial-gradient(55% 50% at 18% 28%, rgba(125, 211, 252, 0.42), transparent 62%),
+    radial-gradient(48% 46% at 78% 26%, rgba(78, 168, 206, 0.38), transparent 64%),
+    radial-gradient(62% 58% at 52% 78%, rgba(46, 78, 140, 0.5), transparent 66%),
+    radial-gradient(38% 38% at 88% 72%, rgba(125, 211, 252, 0.22), transparent 62%);
   filter: blur(58px) saturate(125%);
   animation: drift 26s ease-in-out infinite alternate;
 }

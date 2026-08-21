@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { nav, person } from "@/content/profile";
 
 /**
- * Desktop keeps the left rail: a vertical index whose amber marker slides to the
+ * Desktop keeps the left rail: a vertical index whose accent marker slides to the
  * section you are reading. Below lg it becomes a top bar with a slide-down panel,
  * because a vertical rail on a phone is decoration.
  */
@@ -52,7 +52,7 @@ export default function Nav() {
     <>
       <a
         href="#about"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-amber focus:px-3 focus:py-2 focus:font-mono focus:text-xs focus:text-ink"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-accent focus:px-3 focus:py-2 focus:font-mono focus:text-xs focus:text-ink"
       >
         Skip to content
       </a>
@@ -65,7 +65,7 @@ export default function Nav() {
         <a
           href="#top"
           aria-label={`${person.name} — top of page`}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 font-mono text-[0.6875rem] tracking-[0.12em] text-ivory transition-colors hover:border-amber/60 hover:text-amber"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 font-mono text-[0.6875rem] tracking-[0.12em] text-ivory transition-colors hover:border-accent/60 hover:text-accent"
         >
           {person.initials}
         </a>
@@ -82,7 +82,7 @@ export default function Nav() {
                 >
                   <span
                     className={`h-px transition-all duration-300 ${
-                      on ? "w-7 bg-amber" : "w-3 bg-white/25 group-hover:w-5 group-hover:bg-muted"
+                      on ? "w-7 bg-accent" : "w-3 bg-white/25 group-hover:w-5 group-hover:bg-muted"
                     }`}
                   />
                   <span className={on ? "text-ivory" : "text-faint group-hover:text-muted"}>
@@ -146,6 +146,7 @@ export default function Nav() {
 
         <div
           id="mobile-nav"
+          inert={!open}
           className={`overflow-hidden border-t border-white/10 bg-ink/95 backdrop-blur-xl transition-[max-height] duration-300 ${
             open ? "max-h-96" : "max-h-0 border-t-transparent"
           }`}
@@ -161,7 +162,7 @@ export default function Nav() {
                     aria-current={on ? "true" : undefined}
                     className="flex items-center gap-3 border-b border-white/5 py-3.5 text-[0.9375rem] last:border-b-0"
                   >
-                    <span className={`h-px w-4 ${on ? "bg-amber" : "bg-white/25"}`} aria-hidden />
+                    <span className={`h-px w-4 ${on ? "bg-accent" : "bg-white/25"}`} aria-hidden />
                     <span className={on ? "text-ivory" : "text-muted"}>{item.label}</span>
                   </a>
                 </li>

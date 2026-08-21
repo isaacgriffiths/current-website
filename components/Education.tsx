@@ -12,8 +12,8 @@ export default function Education() {
     >
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         <Reveal className="h-full">
-          <article className="h-full rounded-2xl border border-amber/25 bg-white/[0.03] p-6 sm:p-8">
-            <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-amber">
+          <article className="h-full rounded-2xl border border-accent/25 bg-white/[0.03] p-6 sm:p-8">
+            <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-accent">
               {education.degree.period}
             </p>
             <h3 className="display mt-3 text-xl leading-tight sm:text-2xl">{education.degree.title}</h3>
@@ -26,7 +26,7 @@ export default function Education() {
                   <div key={h} className="flex items-baseline gap-3 border-b border-white/10 py-2.5">
                     <dt className="text-[0.875rem] text-ivory/75">{module}</dt>
                     <span className="h-px flex-1 bg-white/10" aria-hidden />
-                    <dd className="font-mono text-[0.8125rem] text-amber">{mark}</dd>
+                    <dd className="font-mono text-[0.8125rem] text-accent">{mark}</dd>
                   </div>
                 );
               })}
@@ -38,7 +38,7 @@ export default function Education() {
           </article>
         </Reveal>
 
-        <Reveal delay={90} className="h-full">
+        <Reveal className="h-full">
           <article className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
             <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
               Outside work

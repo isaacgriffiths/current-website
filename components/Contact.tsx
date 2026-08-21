@@ -13,7 +13,7 @@ const intents = [
 ];
 
 const field =
-  "w-full rounded-lg border border-line bg-ink-raised/60 px-4 py-3 text-[0.9375rem] text-ivory placeholder:text-faint transition-colors focus:border-amber focus:outline-none";
+  "w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 text-[0.9375rem] text-ivory placeholder:text-faint transition-colors focus:border-accent focus:outline-none";
 const labelClass = "block font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint";
 
 export default function ContactForm() {
@@ -50,7 +50,7 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-xl border border-amber/30 bg-amber/[0.06] p-8">
+      <div className="rounded-xl border border-accent/30 bg-accent/[0.06] p-8">
         <p className="key">Received</p>
         <p className="mt-3 text-lg leading-relaxed text-ivory">
           Thanks — that reached me. I reply to everything, usually within a day or two.
@@ -58,7 +58,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-amber underline underline-offset-4"
+          className="mt-6 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-accent underline underline-offset-4"
         >
           Send another
         </button>
@@ -139,7 +139,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="rounded-full bg-amber px-6 py-3 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-ink transition-colors hover:bg-amber-deep disabled:cursor-not-allowed disabled:opacity-60"
+          className="btn bg-accent text-ink hover:bg-accent-deep disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "sending" ? "Sending" : "Send message"}
         </button>

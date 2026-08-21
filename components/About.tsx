@@ -20,14 +20,14 @@ export default function About() {
                 alt={person.name}
                 width={2000}
                 height={2000}
-                className="block w-full saturate-[0.82] contrast-[1.04]"
+                className="block w-full saturate-[0.72] contrast-[1.06]"
               />
-              {/* warms the RGB lighting in the shot towards the page palette */}
+              {/* settles the RGB lighting in the shot towards the page palette */}
               <div
                 className="pointer-events-none absolute inset-0 mix-blend-soft-light"
                 style={{
                   background:
-                    "linear-gradient(150deg, rgba(240,169,59,0.55), rgba(214,72,120,0.18) 55%, rgba(10,13,19,0.65))",
+                    "linear-gradient(150deg, rgba(125,211,252,0.38), rgba(46,78,140,0.16) 55%, rgba(10,13,19,0.72))",
                 }}
                 aria-hidden
               />
@@ -40,16 +40,18 @@ export default function About() {
           </figure>
         </Reveal>
 
-        <div className="space-y-5">
-          {about.map((para, i) => (
-            <Reveal key={i} delay={i * 80}>
-              <p className="text-[1.0625rem] leading-[1.75] text-ivory/80">{para}</p>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <div className="space-y-5">
+            {about.map((para, i) => (
+              <p key={i} className="text-[1.0625rem] leading-[1.75] text-ivory/80">
+                {para}
+              </p>
+            ))}
+          </div>
+        </Reveal>
       </div>
 
-      <Reveal delay={120}>
+      <Reveal>
         <dl className="mt-14 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {stats.map((s) => (
             <div
@@ -58,7 +60,7 @@ export default function About() {
             >
               <dt className="display flex items-baseline justify-center text-3xl text-ivory sm:text-4xl">
                 {s.value}
-                <span className="ml-0.5 text-lg text-amber sm:text-xl">{s.suffix}</span>
+                <span className="ml-0.5 text-lg text-accent sm:text-xl">{s.suffix}</span>
               </dt>
               <dd className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted">{s.label}</dd>
             </div>

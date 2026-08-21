@@ -26,7 +26,7 @@ export default function ContactSection() {
                 <dd className="mt-1.5">
                   <a
                     href={`mailto:${person.email}`}
-                    className="break-all text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-amber"
+                    className="break-all text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-accent"
                   >
                     {person.email}
                   </a>
@@ -41,7 +41,7 @@ export default function ContactSection() {
                     href={person.links.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-amber"
+                    className="text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-accent"
                   >
                     LinkedIn
                   </a>
@@ -49,7 +49,7 @@ export default function ContactSection() {
                     href={person.links.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-amber"
+                    className="text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-accent"
                   >
                     GitHub
                   </a>
@@ -65,7 +65,7 @@ export default function ContactSection() {
           </div>
         </Reveal>
 
-        <Reveal delay={90}>
+        <Reveal>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
             <ContactForm />
           </div>
