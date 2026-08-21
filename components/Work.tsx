@@ -2,10 +2,10 @@ import { projects } from "@/content/profile";
 import Reveal from "./Reveal";
 import Section from "./Section";
 
-const fields = [
-  { key: "Problem", get: (p: (typeof projects)[number]) => p.problem },
-  { key: "Approach", get: (p: (typeof projects)[number]) => p.approach },
-  { key: "Result", get: (p: (typeof projects)[number]) => p.result },
+const rows = [
+  { key: "Problem", of: (p: (typeof projects)[number]) => p.problem },
+  { key: "Approach", of: (p: (typeof projects)[number]) => p.approach },
+  { key: "Result", of: (p: (typeof projects)[number]) => p.result },
 ];
 
 export default function Work() {
@@ -14,42 +14,32 @@ export default function Work() {
       id="work"
       label="Selected work"
       title="Problem, approach, result"
-      intro="Described at outcome level. Internal systems stay internal; the thinking travels."
+      intro="Described at outcome level. Internal systems stay internal."
     >
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="border-t border-line">
         {projects.map((project, i) => (
-          <Reveal key={project.title} delay={i * 80} className="h-full">
-            <article className="flex h-full flex-col rounded-xl border border-line bg-ink-raised/50 p-7 transition-colors hover:border-line-strong">
-              <div className="flex items-baseline justify-between gap-4">
-                <h3 className="display text-xl leading-tight">{project.title}</h3>
-                <span className="shrink-0 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-faint">
+          <Reveal key={project.title} delay={i * 70}>
+            <article className="grid gap-x-10 gap-y-5 border-b border-line py-10 md:grid-cols-12">
+              <div className="md:col-span-4">
+                <h3 className="display text-2xl leading-tight md:text-[1.75rem]">{project.title}</h3>
+                <p className="mt-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-faint">
                   {project.context}
-                </span>
+                </p>
+                <p className="mt-5 font-mono text-[0.6875rem] leading-relaxed text-faint">
+                  {project.tags.join(" · ")}
+                </p>
               </div>
 
-              <dl className="mt-6 space-y-4 border-t border-line pt-6">
-                {fields.map((field) => (
-                  <div key={field.key}>
-                    <dt className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-amber">
-                      {field.key}
+              <dl className="space-y-4 md:col-span-8">
+                {rows.map((row) => (
+                  <div key={row.key} className="grid gap-1 sm:grid-cols-[6rem_1fr] sm:gap-5">
+                    <dt className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-amber sm:pt-1">
+                      {row.key}
                     </dt>
-                    <dd className="mt-1.5 text-[0.9375rem] leading-relaxed text-muted">
-                      {field.get(project)}
-                    </dd>
+                    <dd className="text-[0.9375rem] leading-relaxed text-muted">{row.of(project)}</dd>
                   </div>
                 ))}
               </dl>
-
-              <ul className="mt-auto flex flex-wrap gap-2 pt-6">
-                {project.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-full border border-line px-3 py-1 font-mono text-[0.6875rem] text-faint"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
             </article>
           </Reveal>
         ))}

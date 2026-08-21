@@ -4,58 +4,53 @@ import Section from "./Section";
 
 export default function Education() {
   return (
-    <Section
-      id="education"
-      label="Education & off the clock"
-      title="Earned alongside the job"
-      intro="A degree apprenticeship means the coursework and the delivery ran at the same time, for four years."
-    >
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Reveal className="h-full">
-          <article className="flex h-full flex-col rounded-xl border border-line bg-ink-raised/50 p-7">
-            <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-amber">
+    <Section id="education" label="Education & off the clock" title="Earned alongside the job">
+      <div className="grid gap-14 border-t border-line pt-10 md:grid-cols-12 md:gap-10">
+        <Reveal className="md:col-span-7">
+          <div>
+            <p className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-amber">
               {education.degree.period}
             </p>
-            <h3 className="display mt-3 text-2xl leading-tight">{education.degree.title}</h3>
-            <p className="mt-2 text-sm text-muted">{education.degree.school}</p>
-            <p className="mt-4 text-[0.9375rem] leading-relaxed text-ivory/80">{education.degree.detail}</p>
-
-            <p className="mt-7 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
-              Strongest modules
+            <h3 className="display mt-3 text-3xl leading-tight">{education.degree.title}</h3>
+            <p className="mt-2 text-[0.9375rem] text-muted">{education.degree.school}</p>
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-ivory/80">
+              A degree apprenticeship, which means four years of coursework and full-time delivery
+              running at the same time.
             </p>
-            <ul className="mt-3 space-y-2 border-t border-line pt-3">
-              {education.degree.highlights.map((h) => (
-                <li key={h} className="font-mono text-[0.75rem] leading-relaxed text-ivory/70">
-                  {h}
-                </li>
-              ))}
-            </ul>
 
-            <ul className="mt-7 space-y-2 border-t border-line pt-5">
-              {education.earlier.map((e) => (
-                <li key={e.title} className="text-[0.875rem] text-muted">
-                  <span className="text-ivory/85">{e.title}</span> — {e.detail}
-                </li>
-              ))}
-            </ul>
-          </article>
+            <dl className="mt-9 max-w-lg">
+              {education.degree.highlights.map((h) => {
+                const [module, mark] = h.split(" — ");
+                return (
+                  <div key={h} className="flex items-baseline gap-4 border-b border-line py-2.5">
+                    <dt className="text-[0.875rem] text-ivory/75">{module}</dt>
+                    <span className="h-px flex-1 bg-line" aria-hidden />
+                    <dd className="font-mono text-[0.8125rem] text-amber">{mark}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+
+            <p className="mt-7 max-w-lg text-[0.875rem] leading-relaxed text-muted">
+              {education.earlier.map((e) => `${e.title} (${e.detail})`).join(". ")}.
+            </p>
+          </div>
         </Reveal>
 
-        <Reveal delay={90} className="h-full">
-          <article className="flex h-full flex-col rounded-xl border border-line bg-ink-raised/50 p-7">
-            <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-amber">
+        <Reveal delay={90} className="md:col-span-4 md:col-start-9">
+          <div>
+            <p className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-faint">
               Outside work
             </p>
-            <h3 className="display mt-3 text-2xl leading-tight">Where the side projects come from</h3>
-            <ul className="mt-6 divide-y divide-line border-t border-line">
+            <dl className="mt-6">
               {interests.map((interest) => (
-                <li key={interest.title} className="py-4">
-                  <h4 className="text-[0.9375rem] text-ivory">{interest.title}</h4>
-                  <p className="mt-1 text-[0.875rem] leading-relaxed text-muted">{interest.body}</p>
-                </li>
+                <div key={interest.title} className="border-t border-line py-4 first:border-t-0 first:pt-0">
+                  <dt className="text-[0.9375rem] text-ivory">{interest.title}</dt>
+                  <dd className="mt-1 text-[0.875rem] leading-relaxed text-muted">{interest.body}</dd>
+                </div>
               ))}
-            </ul>
-          </article>
+            </dl>
+          </div>
         </Reveal>
       </div>
     </Section>

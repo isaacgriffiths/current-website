@@ -50,16 +50,9 @@ export default function Experience() {
                 </ul>
               ) : null}
 
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {role.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-full border border-line px-3 py-1 font-mono text-[0.6875rem] text-faint"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-6 max-w-2xl font-mono text-[0.6875rem] leading-relaxed text-faint">
+                {role.tags.join(" · ")}
+              </p>
             </Reveal>
           </li>
           ))}

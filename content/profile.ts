@@ -9,8 +9,9 @@ export const person = {
   billing: "Forward deployed AI engineer",
   employer: "GSK R&D Tech",
   location: "Hertfordshire, UK",
+  photo: "/isaac.jpg",
   tagline:
-    "I build agentic systems that make enterprise operations ask better questions — sat with the people who have the problem, not three weeks downstream of a ticket.",
+    "I build agentic systems that make enterprise operations ask better questions. Usually sat next to the people who have the problem.",
   email: "hello@isaacgriffiths.com",
   links: {
     linkedin: "https://www.linkedin.com/in/isaacgriffiths/",
@@ -38,10 +39,10 @@ export const stats = [
 ] as const;
 
 export const about = [
-  "I design and build internal AI tools inside GSK R&D Tech — the kind that have to survive real users, real compliance, and a real queue. My current work is one of the first genuinely agentic systems moving towards production in this part of the business.",
+  "I design and build internal AI tools inside GSK R&D Tech. They have to survive real users, real compliance, and a real queue. My current work is one of the first genuinely agentic systems moving towards production in this part of the business.",
   "It started with a boring observation: generic request forms let people submit almost nothing, so engineers spend their first reply asking for what they should already have. I built a triage layer that asks context-aware follow-up questions at intake, so a ticket arrives actionable instead of arriving twice.",
-  "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them — something working on screen inside the session, then reshaped against what they actually do with it. It is faster, and it skips the round of translation where a requirement quietly turns into a different requirement.",
-  "Before that I spent three years as a lab IT engineer, keeping regulated scientific environments running — incident response, decommissioning, OT network segmentation, and a lot of instruments that do not tolerate downtime. That is where I learned that the interesting part of a system is what it does on a bad day.",
+  "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them: something working on screen inside the session, then reshaped against what they actually do with it. It skips the round of translation where a requirement quietly turns into a different requirement.",
+  "Before that I spent three years as a lab IT engineer, keeping regulated scientific environments running: incident response, decommissioning, OT network segmentation, and a lot of instruments that do not tolerate downtime. That is where I learned that the interesting part of a system is what it does on a bad day.",
 ] as const;
 
 export type ExperienceRecord = {
