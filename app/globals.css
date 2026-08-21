@@ -70,6 +70,35 @@ body {
   color: var(--color-amber);
 }
 
+/* Hero atmosphere: slow-drifting warm aurora, amber-led so it is not a copy of
+   anyone else's purple. Sits behind the glass card and fades into the page. */
+.aurora {
+  background:
+    radial-gradient(55% 50% at 18% 28%, rgba(240, 169, 59, 0.5), transparent 62%),
+    radial-gradient(48% 46% at 78% 26%, rgba(214, 72, 120, 0.42), transparent 64%),
+    radial-gradient(62% 58% at 52% 78%, rgba(92, 62, 196, 0.45), transparent 66%),
+    radial-gradient(38% 38% at 88% 72%, rgba(240, 169, 59, 0.3), transparent 62%);
+  filter: blur(58px) saturate(125%);
+  animation: drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1.05);
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.16);
+  }
+}
+
+/* Frosted panel used for the hero identity card and the nav bar. */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(22px) saturate(130%);
+  -webkit-backdrop-filter: blur(22px) saturate(130%);
+}
+
 /* One quiet ambient device: a faint grid, like graph paper under the record. */
 .grid-field {
   background-image:
@@ -119,7 +148,8 @@ body {
     opacity: 1;
     animation: none;
   }
-  .live-dot {
+  .live-dot,
+  .aurora {
     animation: none;
   }
   *,

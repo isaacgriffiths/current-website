@@ -1,6 +1,7 @@
 import { projects } from "@/content/profile";
 import Reveal from "./Reveal";
 import Section from "./Section";
+import TriageDemo from "./TriageDemo";
 
 const rows = [
   { key: "Problem", of: (p: (typeof projects)[number]) => p.problem },
@@ -16,30 +17,40 @@ export default function Work() {
       title="Problem, approach, result"
       intro="Described at outcome level. Internal systems stay internal."
     >
-      <div className="border-t border-line">
+      {/* The signature: the intake pattern, running rather than described. */}
+      <Reveal>
+        <div className="mx-auto mb-14 max-w-md">
+          <TriageDemo />
+        </div>
+      </Reveal>
+
+      <div className="grid gap-5 md:grid-cols-2">
         {projects.map((project, i) => (
-          <Reveal key={project.title} delay={i * 70}>
-            <article className="grid gap-x-10 gap-y-5 border-b border-line py-10 md:grid-cols-12">
-              <div className="md:col-span-4">
-                <h3 className="display text-2xl leading-tight md:text-[1.75rem]">{project.title}</h3>
-                <p className="mt-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-faint">
+          <Reveal key={project.title} delay={i * 70} className="h-full">
+            <article className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-white/20 sm:p-8">
+              <div className="flex items-baseline justify-between gap-4">
+                <h3 className="display text-lg leading-tight sm:text-xl">{project.title}</h3>
+                <span className="shrink-0 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-faint">
                   {project.context}
-                </p>
-                <p className="mt-5 font-mono text-[0.6875rem] leading-relaxed text-faint">
-                  {project.tags.join(" · ")}
-                </p>
+                </span>
               </div>
 
-              <dl className="space-y-4 md:col-span-8">
+              <dl className="mt-5 space-y-4 border-t border-white/10 pt-5">
                 {rows.map((row) => (
-                  <div key={row.key} className="grid gap-1 sm:grid-cols-[6rem_1fr] sm:gap-5">
-                    <dt className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-amber sm:pt-1">
+                  <div key={row.key}>
+                    <dt className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-amber">
                       {row.key}
                     </dt>
-                    <dd className="text-[0.9375rem] leading-relaxed text-muted">{row.of(project)}</dd>
+                    <dd className="mt-1.5 text-[0.9375rem] leading-relaxed text-muted">
+                      {row.of(project)}
+                    </dd>
                   </div>
                 ))}
               </dl>
+
+              <p className="mt-auto pt-6 font-mono text-[0.6875rem] leading-relaxed text-faint">
+                {project.tags.join(" · ")}
+              </p>
             </article>
           </Reveal>
         ))}

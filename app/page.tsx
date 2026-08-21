@@ -11,11 +11,13 @@ import { person } from "@/content/profile";
 
 export default function Home() {
   return (
-    <>
+    <div className="lg:pl-[13.5rem]">
       <Nav />
-      <main className="px-5 sm:px-8 lg:pl-[13.5rem]">
-        <div className="mx-auto w-full max-w-5xl lg:px-10 xl:px-16">
-          <Hero />
+
+      <Hero />
+
+      <main className="px-5 sm:px-8">
+        <div className="mx-auto w-full max-w-5xl">
           <About />
           <Experience />
           <Expertise />
@@ -26,14 +28,16 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="border-t border-line px-5 sm:px-8 lg:pl-[13.5rem]">
-        <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 py-8 font-mono text-[0.6875rem] text-faint lg:px-10 xl:px-16">
+      <footer className="border-t border-white/10 px-5 sm:px-8">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-2 py-8 text-center font-mono text-[0.6875rem] text-faint sm:flex-row sm:justify-between sm:text-left">
           <p>
             © {new Date().getFullYear()} {person.name}
           </p>
-          <p>{person.role} · {person.location}</p>
+          <p>
+            {person.role} · {person.location}
+          </p>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

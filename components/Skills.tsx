@@ -10,20 +10,27 @@ export default function Skills() {
       title="The toolkit"
       intro="Things I have used to ship something real, not things I have read about."
     >
-      <dl className="border-t border-line">
+      <div className="grid gap-5 md:grid-cols-2">
         {skills.map((group, i) => (
-          <Reveal key={group.group} delay={i * 50}>
-            <div className="grid gap-1 border-b border-line py-5 md:grid-cols-[14rem_1fr] md:gap-10">
-              <dt className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-amber md:pt-1">
+          <Reveal key={group.group} delay={i * 60} className="h-full">
+            <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <h3 className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-amber">
                 {group.group}
-              </dt>
-              <dd className="text-[0.9375rem] leading-relaxed text-ivory/80">
-                {group.items.join(", ")}
-              </dd>
+              </h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1.5 text-[0.8125rem] text-ivory/80"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
         ))}
-      </dl>
+      </div>
     </Section>
   );
 }

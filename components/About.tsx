@@ -4,19 +4,35 @@ import Section from "./Section";
 
 export default function About() {
   return (
-    <Section id="about" label="About" title="Built in a regulated queue" bordered={false}>
-      <div className="grid gap-10 md:grid-cols-12 md:gap-10">
-        <Reveal className="md:col-span-4">
-          <figure className="m-0">
-            {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimiser */}
-            <img
-              src={person.photo}
-              alt={person.name}
-              width={900}
-              height={900}
-              className="w-full max-w-[16rem] rounded-lg bg-ink-raised object-cover md:max-w-none"
-            />
-            <figcaption className="mt-3 font-mono text-[0.6875rem] leading-relaxed text-faint">
+    <Section
+      id="about"
+      label="About"
+      title="Built in a regulated queue"
+      intro="Four years at GSK, from lab benches and incident response into agentic systems heading for production."
+    >
+      <div className="grid items-start gap-10 md:grid-cols-[minmax(0,18rem)_minmax(0,1fr)] md:gap-12 lg:gap-16">
+        <Reveal>
+          <figure className="relative m-0 mx-auto max-w-[18rem] md:mx-0">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10">
+              {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimiser */}
+              <img
+                src={person.photo}
+                alt={person.name}
+                width={2000}
+                height={2000}
+                className="block w-full saturate-[0.82] contrast-[1.04]"
+              />
+              {/* warms the RGB lighting in the shot towards the page palette */}
+              <div
+                className="pointer-events-none absolute inset-0 mix-blend-soft-light"
+                style={{
+                  background:
+                    "linear-gradient(150deg, rgba(240,169,59,0.55), rgba(214,72,120,0.18) 55%, rgba(10,13,19,0.65))",
+                }}
+                aria-hidden
+              />
+            </div>
+            <figcaption className="mt-4 text-center font-mono text-[0.6875rem] leading-relaxed text-faint md:text-left">
               {person.name}
               <br />
               {person.location}
@@ -24,24 +40,27 @@ export default function About() {
           </figure>
         </Reveal>
 
-        <div className="space-y-6 md:col-span-7 md:col-start-6">
+        <div className="space-y-5">
           {about.map((para, i) => (
-            <Reveal key={i} delay={i * 90}>
-              <p className="text-lg leading-[1.7] text-ivory/85">{para}</p>
+            <Reveal key={i} delay={i * 80}>
+              <p className="text-[1.0625rem] leading-[1.75] text-ivory/80">{para}</p>
             </Reveal>
           ))}
         </div>
       </div>
 
       <Reveal delay={120}>
-        <dl className="mt-16 grid gap-px overflow-hidden border-y border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="mt-14 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {stats.map((s) => (
-            <div key={s.label} className="bg-ink px-6 py-7">
-              <dt className="display flex items-baseline text-4xl text-ivory">
+            <div
+              key={s.label}
+              className="rounded-xl border border-white/10 bg-white/[0.03] px-5 py-6 text-center"
+            >
+              <dt className="display flex items-baseline justify-center text-3xl text-ivory sm:text-4xl">
                 {s.value}
-                <span className="ml-0.5 text-xl text-amber">{s.suffix}</span>
+                <span className="ml-0.5 text-lg text-amber sm:text-xl">{s.suffix}</span>
               </dt>
-              <dd className="mt-3 text-sm leading-relaxed text-muted">{s.label}</dd>
+              <dd className="mt-2.5 text-[0.8125rem] leading-relaxed text-muted">{s.label}</dd>
             </div>
           ))}
         </dl>
