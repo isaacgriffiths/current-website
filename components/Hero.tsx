@@ -13,16 +13,17 @@ export default function Hero() {
       </div>
 
       <div className="reveal glass w-full max-w-2xl rounded-2xl px-6 py-10 text-center sm:px-12 sm:py-14">
-        {/* The source is a square headshot, so the circle is framed by scaling
-            about a point above centre — otherwise the crop lands on his collar. */}
-        <div className="mx-auto mb-7 h-28 w-28 overflow-hidden rounded-full ring-1 ring-white/25 sm:h-32 sm:w-32">
+        {/* A 4:5 portrait in a circle: object-cover fills the width and crops the
+            height, and 10% puts the head at 14–76% of the circle — headroom above,
+            shoulders below, eyes just over centre. */}
+        <div className="mx-auto mb-7 h-28 w-28 overflow-hidden rounded-full ring-1 ring-white/20 sm:h-32 sm:w-32">
           {/* eslint-disable-next-line @next/next/no-img-element -- static export, no optimiser */}
           <img
             src={person.photo}
             alt={person.name}
-            width={2000}
-            height={2000}
-            className="h-full w-full origin-[50%_26%] scale-[1.45] object-cover saturate-[0.78]"
+            width={512}
+            height={640}
+            className="h-full w-full object-cover object-[50%_10%]"
           />
         </div>
 
