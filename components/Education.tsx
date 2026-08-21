@@ -17,9 +17,20 @@ export default function Education() {
               {education.degree.period}
             </p>
             <h3 className="display mt-3 text-xl leading-tight sm:text-2xl">{education.degree.title}</h3>
-            <p className="mt-2 text-[0.9375rem] text-muted">{education.degree.school}</p>
+            <p className="mt-2 text-[0.9375rem] text-ivory/75">{education.degree.specialism}</p>
+            <p className="mt-1 text-[0.9375rem] text-muted">{education.degree.school}</p>
 
-            <dl className="mt-7">
+            <div className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-t border-white/10 pt-6">
+              <p className="display text-2xl text-ivory">{education.degree.status}</p>
+              <p className="text-[0.8125rem] leading-relaxed text-muted">
+                {education.degree.statusDetail}
+              </p>
+            </div>
+
+            <p className="mt-7 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
+              Strongest modules
+            </p>
+            <dl className="mt-3">
               {education.degree.highlights.map((h) => {
                 const [module, mark] = h.split(" — ");
                 return (

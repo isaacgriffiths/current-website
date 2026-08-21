@@ -234,15 +234,19 @@ export const skills = [
 export const education = {
   degree: {
     title: "BSc (Hons) Digital and Technology Solutions",
+    specialism: "Software Development specialism",
     school: "Anglia Ruskin University, Peterborough",
     detail: "Degree apprenticeship, completed alongside full-time delivery at GSK.",
     period: "2022 — 2026",
+    /** Predicted, not conferred. Classification is confirmed on 10 September 2026. */
+    status: "Predicted First",
+    statusDetail: "330 of 360 credits complete, seven modules at First. Final classification confirmed 10 September 2026.",
     highlights: [
-      "Computer & Network Technologies — 83%",
+      "Programming and Networking IoT Project — 83%",
+      "Computer and Network Technologies — 83%",
       "Information Security Management and Governance — 81%",
-      "Object-Oriented Modelling & Data Design — 76%",
+      "Object Orientated Modelling and Data Design — 76%",
       "Enterprise Analytics — 75%",
-      "Cloud Based Application Development and Security — 71%",
     ],
   },
   earlier: [
