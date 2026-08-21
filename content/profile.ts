@@ -5,9 +5,12 @@ export const person = {
   name: "Isaac Griffiths",
   initials: "IG",
   role: "AI & Agentic Engineer",
+  /** How he sells himself, as distinct from what his badge says. */
+  billing: "Forward deployed AI engineer",
   employer: "GSK R&D Tech",
   location: "Hertfordshire, UK",
-  tagline: "I build agentic systems that make enterprise operations ask better questions.",
+  tagline:
+    "I build agentic systems that make enterprise operations ask better questions — sat with the people who have the problem, not three weeks downstream of a ticket.",
   email: "hello@isaacgriffiths.com",
   links: {
     linkedin: "https://www.linkedin.com/in/isaacgriffiths/",
@@ -37,6 +40,7 @@ export const stats = [
 export const about = [
   "I design and build internal AI tools inside GSK R&D Tech — the kind that have to survive real users, real compliance, and a real queue. My current work is one of the first genuinely agentic systems moving towards production in this part of the business.",
   "It started with a boring observation: generic request forms let people submit almost nothing, so engineers spend their first reply asking for what they should already have. I built a triage layer that asks context-aware follow-up questions at intake, so a ticket arrives actionable instead of arriving twice.",
+  "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them — something working on screen inside the session, then reshaped against what they actually do with it. It is faster, and it skips the round of translation where a requirement quietly turns into a different requirement.",
   "Before that I spent three years as a lab IT engineer, keeping regulated scientific environments running — incident response, decommissioning, OT network segmentation, and a lot of instruments that do not tolerate downtime. That is where I learned that the interesting part of a system is what it does on a bad day.",
 ] as const;
 
@@ -54,7 +58,7 @@ export type ExperienceRecord = {
 
 export const experience: ExperienceRecord[] = [
   {
-    index: "03",
+    index: "02",
     title: "Agentic Engineer, Apprentice",
     org: "GSK — R&D Tech",
     place: "Stevenage",
@@ -65,13 +69,22 @@ export const experience: ExperienceRecord[] = [
     points: [
       "Built an intelligent triage system that asks context-aware follow-up questions at intake, so requests arrive complete and route correctly the first time.",
       "Contributed to one of the first truly agentic systems progressing towards production in R&D Tech, from prototype through stakeholder review.",
+      "Stood up application dashboards for stakeholders in days rather than quarters, pair-building live in the session so requirements were settled by demonstration instead of documentation.",
       "Reverse-engineered a legacy application and supported its like-for-like redevelopment, covering solution design, testing and iterative improvement.",
       "Worked directly with technical and business stakeholders on requirements, user testing, and adoption of practical AI across the function.",
     ],
-    tags: ["Agentic workflows", "LangGraph", "Python", "Next.js", "Prompt engineering", "n8n"],
+    tags: [
+      "Forward deployed",
+      "Agentic workflows",
+      "Dashboards",
+      "LangGraph",
+      "Python",
+      "Next.js",
+      "n8n",
+    ],
   },
   {
-    index: "02",
+    index: "01",
     title: "Laboratory IT Engineer, Degree Apprentice",
     org: "GSK — R&D",
     place: "Stevenage",
@@ -87,20 +100,19 @@ export const experience: ExperienceRecord[] = [
     ],
     tags: ["Incident response", "OT security", "ServiceNow", "Windows", "Networking", "Compliance"],
   },
-  {
-    index: "01",
-    title: "Youth Club Supervisor",
-    org: "Volunteer",
-    place: "Buckinghamshire",
-    period: "Jan 2020 — Jun 2021",
-    summary:
-      "Ran weekly sessions for groups of 15–20, responsible for safety, structure, and everyone actually wanting to come back.",
-    points: [],
-    tags: ["Leadership", "Mentoring"],
-  },
 ];
 
 export const expertise = [
+  {
+    title: "Forward deployed by default",
+    body: "I work next to the people who have the problem. Requirements get settled by putting something on screen in the room, not by a document that describes what everyone thought they agreed.",
+    points: [
+      "Embedded delivery with business and technical stakeholders",
+      "Pair-building live, in the session",
+      "Application dashboards standing up in days",
+      "AI-assisted prototyping with the review discipline to match",
+    ],
+  },
   {
     title: "Agentic systems that reach users",
     body: "Designing agent workflows that hold up outside a demo: tool use, structured outputs, sensible failure behaviour, and a path from prototype to something an operations team will actually accept.",
@@ -134,6 +146,17 @@ export const expertise = [
 ] as const;
 
 export const projects = [
+  {
+    title: "Dashboards built in the room",
+    context: "GSK R&D Tech",
+    problem:
+      "Teams described what they needed in a meeting, then waited weeks to discover it was not what they meant.",
+    approach:
+      "Sat with the stakeholders and built alongside them — AI-assisted prototyping to get a working dashboard on screen inside the session, then reshaped it against their reaction.",
+    result:
+      "Requirements settled by demonstration, and working dashboards in days rather than a specification cycle.",
+    tags: ["Forward deployed", "Dashboards", "Rapid prototyping"],
+  },
   {
     title: "Intelligent intake and triage",
     context: "GSK R&D Tech",
@@ -181,7 +204,20 @@ export const skills = [
     group: "AI & agentic",
     items: ["LangChain", "LangGraph", "Prompt engineering", "Structured outputs", "Tool calling", "OpenAI", "Anthropic", "Gemini"],
   },
-  { group: "Web & APIs", items: ["Next.js", "React", "FastAPI", "REST APIs", "Integration design"] },
+  {
+    group: "Web & APIs",
+    items: ["Next.js", "React", "FastAPI", "REST APIs", "Dashboard development", "Integration design"],
+  },
+  {
+    group: "Working with stakeholders",
+    items: [
+      "Embedded delivery",
+      "Pair-building",
+      "Requirements by demonstration",
+      "User testing",
+      "Adoption & handover",
+    ],
+  },
   { group: "Automation", items: ["n8n", "Workflow orchestration", "Process automation", "ServiceNow"] },
   { group: "Cloud & delivery", items: ["Google Cloud Platform", "Microsoft Azure", "GitHub", "Cloudflare", "Docker"] },
   {

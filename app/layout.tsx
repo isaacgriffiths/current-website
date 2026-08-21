@@ -23,14 +23,16 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "AI and agentic engineer at GSK R&D Tech. I build internal AI systems that improve service operations in regulated environments.";
+  "Forward deployed AI engineer at GSK R&D Tech. I embed with stakeholders and build agentic systems, dashboards and internal tools that hold up in regulated operations.";
+
+const title = `${person.name} — ${person.billing}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://isaacgriffiths.com"),
-  title: `${person.name} — ${person.role}`,
+  title,
   description,
   openGraph: {
-    title: `${person.name} — ${person.role}`,
+    title,
     description,
     url: "https://isaacgriffiths.com",
     siteName: person.name,

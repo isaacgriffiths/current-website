@@ -15,8 +15,8 @@ export default function ContactSection() {
         <Reveal>
           <div className="space-y-8">
             <p className="text-lg leading-relaxed text-ivory/85">
-              I am open to conversations about AI and agentic engineering roles, particularly where the
-              work has to survive real operations rather than a demo.
+              I am open to conversations about forward deployed and agentic engineering roles,
+              particularly where the work has to survive real operations rather than a demo.
             </p>
             <dl className="space-y-5 border-t border-line pt-8">
               <div>

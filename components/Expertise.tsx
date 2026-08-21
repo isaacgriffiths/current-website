@@ -8,9 +8,9 @@ export default function Expertise() {
       id="expertise"
       label="Expertise"
       title="What I am for"
-      intro="Three things I am reliably useful at, and the reason each one holds up in a regulated environment."
+      intro="Four things I am reliably useful at, and the reason each one holds up in a regulated environment."
     >
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-6 lg:grid-cols-2">
         {expertise.map((item, i) => (
           <Reveal key={item.title} delay={i * 90} className="h-full">
             <article className="flex h-full flex-col rounded-xl border border-line bg-ink-raised/50 p-7 transition-colors hover:border-line-strong hover:bg-ink-raised">

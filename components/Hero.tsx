@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="relative grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <div>
           <p className="key reveal" style={{ animationDelay: "0ms" }}>
-            {person.role} · {person.employer}
+            {person.billing} · {person.employer}
           </p>
 
           <h1
