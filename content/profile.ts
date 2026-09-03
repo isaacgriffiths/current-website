@@ -4,7 +4,7 @@
 export const person = {
   name: "Isaac Griffiths",
   initials: "IG",
-  role: "Data and Analytics Engineering Manager",
+  role: "Data Engineer",
   /** How he sells himself, as distinct from what his badge says. */
   billing: "AI-native agentic engineer, forward deployed",
   employer: "GSK R&D Tech",
@@ -36,8 +36,8 @@ export const triage = {
 
 export const about = [
   {
-    copy: "I am Isaac Griffiths, a Data and Analytics Engineering Manager in GSK R&D Tech. I design and build internal AI tools that have to survive real users, real compliance, and a real queue, and I am now the technical lead of an agentic product, one of the first genuinely agentic systems moving towards production in this part of the business.",
-    highlights: ["Data and Analytics Engineering Manager", "GSK R&D Tech", "technical lead of an agentic product", "genuinely agentic systems"],
+    copy: "I am Isaac Griffiths, a Data Engineer in GSK R&D Tech on a manager-grade job profile. I design and build internal AI tools that have to survive real users, real compliance, and a real queue, and I am now the technical lead of an agentic product, one of the first genuinely agentic systems moving towards production in this part of the business.",
+    highlights: ["Data Engineer", "GSK R&D Tech", "manager-grade job profile", "technical lead of an agentic product"],
   },
   {
     copy: "It started with a boring observation: generic request forms let people submit almost nothing, so engineers spend their first reply asking for what they should already have. I served as technical lead for a triage layer that asks context-aware follow-up questions at intake, so a ticket arrives actionable instead of arriving twice.",
@@ -69,18 +69,18 @@ export type ExperienceRecord = {
 export const experience: ExperienceRecord[] = [
   {
     index: "03",
-    title: "Data and Analytics Engineering Manager",
+    title: "Data Engineer",
     url: "https://www.gsk.com/",
     org: "GSK R&D Tech",
     place: "Stevenage",
     period: "Aug 2026 – present",
     current: true,
     summary:
-      "Technical lead of an agentic product in Scientific Data Engineering, promoted from the apprenticeship to a manager-grade role four years after joining GSK. I own the product's path from working prototype through stakeholder review into production, and I still build hands-on, sat with the people who use it.",
+      "Technical lead of an agentic product in Scientific Data Engineering, promoted from the apprenticeship onto a manager-grade job profile (Data and Analytics Engineering Manager) four years after joining GSK. I own the product's path from working prototype through stakeholder review into production, and I still build hands-on, sat with the people who use it.",
     points: [
       "Technical lead of an agentic product in R&D Tech, one of the function's first genuinely agentic systems progressing towards production.",
       "Own delivery end to end: prototype, stakeholder review, production readiness, and the conversations in between.",
-      "Promoted from apprentice to a manager-grade position within four years of joining GSK.",
+      "Promoted from apprentice onto a manager-grade job profile within four years of joining GSK; business title Data Engineer.",
     ],
     tags: ["Agentic systems", "Tech lead", "AI-native", "Python", "TypeScript"],
   },
