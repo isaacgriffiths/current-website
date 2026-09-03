@@ -44,7 +44,7 @@ export const about = [
     highlights: ["context-aware follow-up questions", "actionable"],
   },
   {
-    copy: "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them: something working on screen inside the session, then reshaped against what they actually do with it. I am AI-native about the building itself: Claude Code, Cursor and Codex write the Python and TypeScript, and I specify the system, direct the agents, and read, review, test and debug what comes out.",
+    copy: "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them: something working on screen inside the session, then reshaped against what they actually do with it. I am AI-native about the building itself: Claude Code writes the Python and TypeScript, and I specify the system, direct the agents, and read, review, test and debug what comes out.",
     highlights: ["forward deployed", "build alongside them", "AI-native"],
   },
   {
@@ -136,9 +136,9 @@ export const expertise = [
   },
   {
     title: "AI-native engineering, with the review to match",
-    body: "I do not hand-write Python or TypeScript any more. Claude Code, Cursor and Codex write the code; I specify the system, direct the agents, and read, review, test and debug everything that comes out. That second half is the part that decides whether any of it ships.",
+    body: "I do not hand-write Python or TypeScript any more. At work Claude Code writes the code (Cursor at the very start, then the GitHub Copilot coding agent); at home it is Claude Code, Cursor, Codex and a small self-hosted model on an old gaming GPU. I specify the system, direct the agents, and read, review, test and debug everything that comes out. That second half is the part that decides whether any of it ships.",
     points: [
-      "Claude Code, Cursor and Codex as the daily toolchain",
+      "Claude Code as the daily toolchain at work; Cursor, Codex, Ollama and OpenCode at home",
       "Python and TypeScript read, reviewed and debugged, never typed by hand",
       "Tested like it matters: adversarial cases, API suites, trace logging, peer review",
       "Reverse engineering when there is no source to work from",
@@ -253,7 +253,7 @@ export const skills = [
   { group: "Cloud & delivery", items: ["Google Cloud Platform", "Microsoft Azure", "GitHub", "Cloudflare", "Docker"] },
   {
     group: "AI-native development",
-    items: ["Claude Code", "Cursor", "Codex", "Rapid prototyping", "Review, testing and debugging of generated code"],
+    items: ["Claude Code", "GitHub Copilot agent", "Cursor", "Codex", "Ollama", "Open WebUI", "Rapid prototyping", "Review, testing and debugging of generated code"],
   },
   {
     group: "Infrastructure",
