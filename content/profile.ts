@@ -8,10 +8,10 @@ export const person = {
   /** How he sells himself, as distinct from what his badge says. */
   billing: "AI-native agentic engineer, forward deployed",
   employer: "GSK R&D Tech",
-  location: "Buckinghamshire, UK",
+  location: "London, UK",
   /** Where he will actually work, which matters more to a recruiter than where he sleeps. */
-  reach: "London & the South East",
-  commute: "Four years commuting to Stevenage, so the South East is well within reach.",
+  reach: "London and around it",
+  commute: "Based in London; four years commuting to Stevenage, so anywhere in and around London is well within reach.",
   photo: "/isaac.jpg",
   tagline:
     "I build agentic systems that make enterprise operations ask better questions. Usually sat next to the people who have the problem.",

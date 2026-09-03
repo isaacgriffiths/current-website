@@ -17,7 +17,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "Agentic engineer at GSK R&D Tech, forward deployed. I build agent workflows and internal tools that hold up in regulated operations. Buckinghamshire, UK.";
+  "Agentic engineer at GSK R&D Tech, forward deployed. I build agent workflows and internal tools that hold up in regulated operations. London, UK.";
 
 const title = `${person.name} | ${person.billing}`;
 
@@ -64,7 +64,7 @@ const personJsonLd = {
     worksFor: { "@type": "Organization", name: "GSK", url: "https://www.gsk.com" },
     address: {
       "@type": "PostalAddress",
-      addressRegion: "Buckinghamshire",
+      addressRegion: "London",
       addressCountry: "GB",
     },
     sameAs: [person.links.linkedin, person.links.github],
