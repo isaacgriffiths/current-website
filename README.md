@@ -58,6 +58,17 @@ npx wrangler r2 object put isaacgriffiths-private-assets/documents/<file>.pdf \
 
 and update `CV_OBJECT_KEY` in the function to match.
 
+## Making it your own
+
+- **Your facts.** `content/profile.ts` holds the name, role, tagline, email, photo path, experience, education, skills and the triage demo script. Edit that one file and the whole page follows.
+- **Your face.** Replace `public/isaac.jpg`, `isaac.avif` and `isaac.webp` and update `photo` in the profile file. The AVIF and WebP copies are what actually ship; regenerate them from your JPEG with any image tool.
+- **Your domain.** Search the repo for `isaacgriffiths.com`. It appears in `app/layout.tsx` (metadata base, Open Graph URL, JSON-LD identifiers), `app/sitemap.ts`, `app/robots.ts` and `public/llms.txt`. Update the JSON-LD `dateCreated` and `addressRegion` there too, or remove them.
+- **Search engine bits.** Delete `public/fc99d738e7afc58e1d57a217e2360e12.txt`; that is my IndexNow key. Generate your own if you want IndexNow, otherwise skip it. Rewrite `public/llms.txt` in your own words.
+- **Contact form.** Create a Resend account and a verified sender on your domain, set the environment variables above in your Pages project, and optionally add Turnstile. Point `CV_BUCKET` in `wrangler.jsonc` at your own R2 bucket and change `CV_OBJECT_KEY` in `functions/api/contact.ts`. Without any of that the form still degrades cleanly to a mailto link.
+- **Headers.** `public/_headers` sets caching and security headers; nothing in it is personal.
+
+No secrets are committed anywhere. Every key is read from Pages environment variables at request time, and `.env*` files are gitignored.
+
 ## Deploying
 
 Production is a direct upload of the static export to the Pages project `website`:
