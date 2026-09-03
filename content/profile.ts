@@ -230,14 +230,20 @@ export const projects = [
 ] as const;
 
 export const skills = [
-  { group: "Languages", items: ["Python", "TypeScript", "JavaScript", "SQL", "HTML", "CSS"] },
+  {
+    group: "Languages",
+    items: ["Python", "TypeScript", "JavaScript", "SQL", "HTML", "CSS"],
+    where: "Python on the GSK triage and booking backends; TypeScript across the triage UI, the legacy rebuild, TwinList, ShipStamp and this site.",
+  },
   {
     group: "AI & agentic",
     items: ["LangChain", "LangGraph", "Prompt engineering", "Structured outputs", "Tool calling", "OpenAI", "Anthropic", "Gemini"],
+    where: "LangGraph state machines on the GSK triage agent (2025) and booking agent (2026), with an MCP server into ServiceNow. GPT-4o via Azure and Gemini at GSK; Claude in TwinList.",
   },
   {
     group: "Web & APIs",
     items: ["Next.js", "React", "FastAPI", "PostgreSQL", "REST APIs", "Electron", "Integration design"],
+    where: "FastAPI behind the triage and booking agents; Next.js on the triage UI, booking dashboards and the legacy rebuild; PostgreSQL with pgvector and Electron in TwinList and ShipStamp.",
   },
   {
     group: "Working with stakeholders",
@@ -248,16 +254,27 @@ export const skills = [
       "User testing",
       "Adoption & handover",
     ],
+    where: "Every GSK build since 2025: requirements settled with scientists in the room, then UAT, sign-off and training across lab teams.",
   },
-  { group: "Automation", items: ["n8n", "Workflow orchestration", "Process automation", "ServiceNow"] },
-  { group: "Cloud & delivery", items: ["Google Cloud Platform", "Microsoft Azure", "GitHub", "Cloudflare", "Docker"] },
+  {
+    group: "Automation",
+    items: ["n8n", "Workflow orchestration", "Process automation", "ServiceNow"],
+    where: "ServiceNow through the triage agent at GSK; n8n at home for the AI news digest that feeds my content.",
+  },
+  {
+    group: "Cloud & delivery",
+    items: ["Google Cloud Platform", "Microsoft Azure", "GitHub", "Cloudflare", "Docker"],
+    where: "Triage agent in Docker on Cloud Run via GitHub Actions and Artifact Registry, Azure OpenAI through GSK's gateway; Cloudflare Workers, D1 and Pages for the products and this site.",
+  },
   {
     group: "AI-native development",
     items: ["Claude Code", "GitHub Copilot agent", "Cursor", "Codex", "Ollama", "Open WebUI", "Rapid prototyping", "Review, testing and debugging of generated code"],
+    where: "At GSK: Cursor at the start in 2025, then the Copilot coding agent, now Claude Code only. At home: Claude Code, Cursor, Codex and a self-hosted model on an old gaming GPU.",
   },
   {
     group: "Infrastructure",
     items: ["Windows & Linux", "Networking & VLANs", "Active Directory", "WDS/MDT imaging", "PowerShell", "OT segmentation", "Proxmox", "Unraid"],
+    where: "Three years in GSK's Stevenage labs: PC build automation, instrument networking, OT segmentation, the CrowdStrike recovery. Proxmox and Unraid at home.",
   },
 ] as const;
 

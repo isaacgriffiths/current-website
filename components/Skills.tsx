@@ -14,7 +14,10 @@ export default function Skills() {
             className="grid gap-1 border-b border-white/10 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6"
           >
             <dt className="key text-accent sm:pt-1">{group.group}</dt>
-            <dd className="text-base leading-normal text-ivory/80">{group.items.join(", ")}</dd>
+            <dd className="text-base leading-normal text-ivory/80">
+              {group.items.join(", ")}
+              <span className="mt-1 block text-sm leading-normal text-faint">{group.where}</span>
+            </dd>
           </div>
         ))}
       </dl>
