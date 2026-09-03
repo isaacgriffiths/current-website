@@ -28,6 +28,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  // Static files in public/ so the URLs never carry a build hash.
+  // Google only refreshes a favicon it can find at a stable URL.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title,
     description,
@@ -35,7 +44,7 @@ export const metadata: Metadata = {
     siteName: person.name,
     locale: "en_GB",
     type: "profile",
-    images: [{ url: person.photo, alt: person.name }],
+    images: [{ url: person.photo, alt: person.name, width: 512, height: 640, type: "image/jpeg" }],
   },
   twitter: {
     card: "summary",
