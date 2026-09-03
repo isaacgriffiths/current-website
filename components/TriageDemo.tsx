@@ -43,16 +43,16 @@ export default function TriageDemo() {
 
   return (
     <figure className="m-0">
-      <div className="rounded-xl border border-white/10 bg-white/[0.04] p-5 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)] backdrop-blur-sm sm:p-6">
+      <div className="rounded-md border border-white/10 bg-white/[0.03] p-5 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)]">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <span className="key">Intake</span>
-          <span className="flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-faint">
+          <span className="key text-accent">Intake</span>
+          <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-faint">
             <span className={`h-1.5 w-1.5 rounded-full bg-accent ${routed ? "" : "live-dot"}`} />
             {routed ? "complete" : "asking"}
           </span>
         </div>
 
-        <p className="pt-5 font-mono text-sm leading-relaxed text-muted">
+        <p className="pt-5 font-mono text-base leading-relaxed text-muted">
           <span className="text-faint">&gt;&nbsp;</span>
           {triage.before}
         </p>
@@ -70,10 +70,10 @@ export default function TriageDemo() {
                 }}
                 aria-hidden={!visible}
               >
-                <span className="font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-faint">
+                <span className="font-mono text-xs uppercase tracking-[0.12em] text-faint">
                   {q.key}
                 </span>
-                <span className="font-mono text-[0.8125rem] text-ivory">{q.value}</span>
+                <span className="font-mono text-sm text-ivory">{q.value}</span>
               </li>
             );
           })}
@@ -84,17 +84,17 @@ export default function TriageDemo() {
           style={{ opacity: routed ? 1 : 0, transform: routed ? "none" : "translateY(6px)" }}
           aria-hidden={!routed}
         >
-          <span className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-accent">
+          <span className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
             Routed
           </span>
-          <span className="font-mono text-[0.8125rem] text-ivory">{triage.after.queue}</span>
+          <span className="font-mono text-sm text-ivory">{triage.after.queue}</span>
           <span className="text-faint">·</span>
-          <span className="font-mono text-[0.8125rem] text-ivory">{triage.after.priority}</span>
-          <span className="ml-auto font-mono text-[0.6875rem] text-faint">{triage.after.note}</span>
+          <span className="font-mono text-sm text-ivory">{triage.after.priority}</span>
+          <span className="ml-auto font-mono text-xs text-faint">{triage.after.note}</span>
         </div>
       </div>
 
-      <figcaption className="mt-3 font-mono text-[0.6875rem] leading-relaxed text-faint">
+      <figcaption className="mt-3 font-mono text-xs leading-relaxed text-faint">
         Illustrative. The pattern, not a real ticket.
       </figcaption>
     </figure>

@@ -1,0 +1,14 @@
+# Isaac Griffiths
+
+> Personal site of Isaac Griffiths, Data and Analytics Engineering Manager at GSK R&D Tech, Buckinghamshire, UK. He works as an agentic engineer, forward deployed: building agent workflows and internal AI tools that hold up in regulated operations.
+
+Isaac Griffiths is a Data and Analytics Engineering Manager in GSK R&D Tech and the technical lead of an agentic product in Scientific Data Engineering. He builds agentic systems (LangGraph, n8n, FastAPI, Python, TypeScript), works embedded alongside the teams who have the problem, and previously spent three years as a laboratory IT engineer keeping regulated scientific environments running.
+
+## Site
+
+- [Home](https://isaacgriffiths.com/): About, experience, skills, education, and contact for Isaac Griffiths.
+
+## Profiles
+
+- [LinkedIn](https://www.linkedin.com/in/isaacgriffiths/)
+- [GitHub](https://github.com/isaacgriffiths)

@@ -1,73 +1,52 @@
-import { education, interests } from "@/content/profile";
-import Reveal from "./Reveal";
+import { education } from "@/content/profile";
+import Entry, { EntryList } from "./Entry";
 import Section from "./Section";
 
+const SEPARATOR = " | ";
+
 export default function Education() {
+  const { degree } = education;
+
   return (
-    <Section
-      id="education"
-      label="Education & off the clock"
-      title="Earned alongside the job"
-      intro="A degree apprenticeship means four years of coursework and full-time delivery running at the same time."
-    >
-      <div className="grid gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
-        <Reveal className="h-full">
-          <article className="h-full rounded-2xl border border-accent/25 bg-white/[0.03] p-6 sm:p-8">
-            <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-accent">
-              {education.degree.period}
-            </p>
-            <h3 className="display mt-3 text-xl leading-tight sm:text-2xl">{education.degree.title}</h3>
-            <p className="mt-2 text-[0.9375rem] text-ivory/75">{education.degree.specialism}</p>
-            <p className="mt-1 text-[0.9375rem] text-muted">{education.degree.school}</p>
+    <Section id="education" label="Education" ariaLabel="Education and interests">
+      <EntryList>
+        <Entry meta={degree.period}>
+          <h3 className="font-medium leading-snug text-ivory transition-colors group-hover:text-accent">{degree.title}</h3>
+          <p className="mt-1 text-base text-muted">
+            {degree.specialism} <span aria-hidden>&middot;</span> {degree.school}
+          </p>
+          <p className="mt-3 text-base leading-normal">{degree.detail}</p>
 
-            <div className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-t border-white/10 pt-6">
-              <p className="display text-2xl text-ivory">{education.degree.status}</p>
-              <p className="text-[0.8125rem] leading-relaxed text-muted">
-                {education.degree.statusDetail}
-              </p>
-            </div>
+          <p className="mt-4 text-base leading-normal">
+            <span className="font-medium text-ivory">{degree.status}</span>
+            <span className="text-faint"> &middot; {degree.statusDetail}</span>
+          </p>
 
-            <p className="mt-7 font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
-              Strongest modules
-            </p>
-            <dl className="mt-3">
-              {education.degree.highlights.map((h) => {
-                const [module, mark] = h.split(" — ");
+          <div className="mt-6">
+            <p className="key mb-2 text-faint">Selected results</p>
+            <dl className="border-t border-white/10">
+              {degree.highlights.map((highlight) => {
+                const [module, mark] = highlight.split(SEPARATOR);
                 return (
-                  <div key={h} className="flex items-baseline gap-3 border-b border-white/10 py-2.5">
-                    <dt className="text-[0.875rem] text-ivory/75">{module}</dt>
+                  <div
+                    key={highlight}
+                    className="flex items-baseline gap-3 border-b border-white/10 py-2.5"
+                  >
+                    <dt className="text-base text-ivory/80">{module}</dt>
                     <span className="h-px flex-1 bg-white/10" aria-hidden />
-                    <dd className="font-mono text-[0.8125rem] text-accent">{mark}</dd>
+                    <dd className="font-mono text-xs text-accent">{mark}</dd>
                   </div>
                 );
               })}
             </dl>
+          </div>
 
-            <p className="mt-6 text-[0.875rem] leading-relaxed text-muted">
-              {education.earlier.map((e) => `${e.title} (${e.detail})`).join(". ")}.
-            </p>
-          </article>
-        </Reveal>
+          <p className="mt-4 text-base leading-normal text-faint">
+            {education.earlier.map((item) => `${item.title} (${item.detail})`).join(". ")}.
+          </p>
+        </Entry>
 
-        <Reveal className="h-full">
-          <article className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
-            <p className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
-              Outside work
-            </p>
-            <dl className="mt-5">
-              {interests.map((interest) => (
-                <div
-                  key={interest.title}
-                  className="border-t border-white/10 py-4 first:border-t-0 first:pt-0"
-                >
-                  <dt className="text-[0.9375rem] text-ivory">{interest.title}</dt>
-                  <dd className="mt-1 text-[0.875rem] leading-relaxed text-muted">{interest.body}</dd>
-                </div>
-              ))}
-            </dl>
-          </article>
-        </Reveal>
-      </div>
+      </EntryList>
     </Section>
   );
 }

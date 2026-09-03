@@ -1,0 +1,14 @@
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/isaac.avif
+  Cache-Control: public, max-age=86400
+
+/isaac.webp
+  Cache-Control: public, max-age=86400
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: geolocation=(), camera=(), microphone=()

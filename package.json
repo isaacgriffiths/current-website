@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:scrollspy": "node scripts/check-scrollspy.mjs",
+    "test:contact-fallback": "node scripts/check-contact-fallback.mjs",
+    "test:email-outlook": "node scripts/check-email-outlook.mjs"
   },
   "dependencies": {
     "next": "16.3.2",

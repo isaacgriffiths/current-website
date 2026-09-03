@@ -2,42 +2,51 @@ import About from "@/components/About";
 import ContactSection from "@/components/ContactSection";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
-import Expertise from "@/components/Expertise";
-import Hero from "@/components/Hero";
-import Nav from "@/components/Nav";
+import Sidebar from "@/components/Sidebar";
 import Skills from "@/components/Skills";
-import Work from "@/components/Work";
+import Spotlight from "@/components/Spotlight";
 import { person } from "@/content/profile";
 
 export default function Home() {
   return (
-    <div className="lg:pl-[13.5rem]">
-      <Nav />
+    <div className="relative">
+      <Spotlight />
 
-      <Hero />
+      <div className="relative z-10 mx-auto min-h-screen max-w-[1280px] px-6 pb-12 pt-6 font-sans md:px-12 md:py-16 lg:py-0">
+        <a
+          href="#content"
+          className="fixed left-4 top-4 z-50 block -translate-y-[200%] rounded bg-accent px-4 py-3 text-sm font-bold uppercase tracking-widest text-ink transition-transform focus-visible:translate-y-0"
+        >
+          Skip to content
+        </a>
 
-      <main className="px-5 sm:px-8">
-        <div className="mx-auto w-full max-w-5xl">
-          <About />
-          <Experience />
-          <Expertise />
-          <Work />
-          <Skills />
-          <Education />
-          <ContactSection />
+        {/* Two halves: the identity sticks, the record scrolls past it. */}
+        <div className="lg:flex lg:justify-between lg:gap-4">
+          <Sidebar />
+
+          <main
+            id="content"
+            className="pt-6 text-lg leading-[1.7] md:pt-16 lg:w-[52%] lg:py-[clamp(1.5rem,6svh,6rem)]"
+          >
+            <About />
+            <Experience />
+            <Skills />
+            <Education />
+            <ContactSection />
+
+            <footer className="max-w-md pb-16 text-base leading-normal text-faint sm:pb-0">
+              <p>
+                Built with Next.js and Tailwind CSS, deployed on Cloudflare Pages, and written
+                mostly by talking to a coding agent. Set in Inter and IBM Plex Mono.
+              </p>
+              <p className="mt-3">
+                &copy; {new Date().getFullYear()} {person.name} <span aria-hidden>&middot;</span>{" "}
+                {person.location}
+              </p>
+            </footer>
+          </main>
         </div>
-      </main>
-
-      <footer className="border-t border-white/10 px-5 sm:px-8">
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-2 py-8 text-center font-mono text-[0.6875rem] text-faint sm:flex-row sm:justify-between sm:text-left">
-          <p>
-            © {new Date().getFullYear()} {person.name}
-          </p>
-          <p>
-            {person.role} · {person.location}
-          </p>
-        </div>
-      </footer>
+      </div>
     </div>
   );
 }

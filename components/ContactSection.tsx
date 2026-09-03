@@ -1,79 +1,51 @@
 import { person } from "@/content/profile";
 import ContactForm from "./Contact";
-import Reveal from "./Reveal";
 import Section from "./Section";
 
 export default function ContactSection() {
   return (
-    <Section
-      id="contact"
-      label="Contact"
-      title="Start a conversation"
-      intro="Hiring, curious, or after the full CV as a PDF. This reaches me directly."
-    >
-      <div className="mx-auto grid max-w-4xl gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-        <Reveal className="h-full">
-          <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
-            <p className="text-[0.9375rem] leading-relaxed text-ivory/80">
-              I am open to conversations about agentic and forward deployed engineering roles across
-              London and the South East, particularly where the work has to survive real operations
-              rather than a demo.
-            </p>
-            <dl className="mt-7 space-y-5 border-t border-white/10 pt-7">
-              <div>
-                <dt className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
-                  Email
-                </dt>
-                <dd className="mt-1.5">
-                  <a
-                    href={`mailto:${person.email}`}
-                    className="break-all text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-accent"
-                  >
-                    {person.email}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
-                  Elsewhere
-                </dt>
-                <dd className="mt-1.5 flex gap-5">
-                  <a
-                    href={person.links.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-accent"
-                  >
-                    LinkedIn
-                  </a>
-                  <a
-                    href={person.links.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[0.9375rem] text-ivory underline decoration-white/20 underline-offset-4 transition-colors hover:decoration-accent"
-                  >
-                    GitHub
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-faint">
-                  Based in / working across
-                </dt>
-                <dd className="mt-1.5 text-[0.9375rem] text-muted">
-                  {person.location}
-                  <span className="mt-1 block text-[0.8125rem] text-faint">{person.commute}</span>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </Reveal>
+    <Section id="contact" label="Contact" ariaLabel="Contact" compactAfter>
+      <div className="relative -mx-6 overflow-hidden border-y border-white/10 bg-white/[0.035] shadow-none sm:mx-0 sm:rounded-xl sm:border sm:shadow-[0_24px_80px_-40px_rgba(0,254,254,0.22)] lg:-mx-6">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-28 h-64 w-64 rounded-full bg-accent/[0.08] blur-3xl"
+        />
 
-        <Reveal>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
-            <ContactForm />
+        <div className="relative p-6 sm:p-8 lg:px-8 lg:py-6">
+          <div className="flex items-center gap-2.5">
+            <span className="relative flex h-2.5 w-2.5" aria-hidden>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-30 motion-reduce:animate-none" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+            </span>
+            <p className="key text-accent">Open to the right role</p>
           </div>
-        </Reveal>
+
+          <h3 className="mt-5 max-w-md text-2xl font-semibold tracking-tight text-ivory sm:text-3xl lg:mt-4">
+            Have a problem worth sitting beside?
+          </h3>
+          <p className="mt-4 max-w-xl leading-relaxed lg:mt-3">
+            I am interested in agentic and forward deployed engineering roles where AI has to
+            survive real users, real operations, and real constraints. Tell me what you are
+            building, what is stuck, or ask for my full CV. This form lands directly in my inbox.
+          </p>
+
+          <a
+            href={`mailto:${person.email}`}
+            className="group mt-6 inline-flex items-center gap-2 text-base font-medium text-ivory transition-colors hover:text-accent lg:hidden"
+          >
+            {person.email}
+            <span
+              aria-hidden
+              className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+            >
+              &rarr;
+            </span>
+          </a>
+        </div>
+
+        <div className="relative border-t border-white/10 bg-ink/25 p-6 sm:p-8 lg:p-7">
+          <ContactForm />
+        </div>
       </div>
     </Section>
   );

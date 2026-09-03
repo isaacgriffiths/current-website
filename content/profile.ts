@@ -1,10 +1,10 @@
 // Single source of truth for every fact on this site.
-// Keep this file in sync with the master CV — nothing else hard-codes content.
+// Keep this file in sync with the master CV; nothing else hard-codes content.
 
 export const person = {
   name: "Isaac Griffiths",
   initials: "IG",
-  role: "AI & Agentic Engineer",
+  role: "Data and Analytics Engineering Manager",
   /** How he sells himself, as distinct from what his badge says. */
   billing: "Agentic engineer, forward deployed",
   employer: "GSK R&D Tech",
@@ -26,31 +26,37 @@ export const person = {
 export const triage = {
   before: "pc in lab 4 isn't working",
   questions: [
-    { key: "Instrument", value: "HPLC — bench 07" },
+    { key: "Instrument", value: "HPLC, bench 07" },
     { key: "On screen", value: "Acquisition service failed" },
-    { key: "Blocking a run", value: "Yes — sample queue held" },
+    { key: "Blocking a run", value: "Yes, sample queue held" },
     { key: "Last worked", value: "Friday, before patching" },
   ],
   after: { queue: "Lab Systems", priority: "P2", note: "routed on submit" },
 } as const;
 
-export const stats = [
-  { value: "4", suffix: "yrs", label: "at GSK, across lab engineering and R&D Tech" },
-  { value: "250", suffix: "+", label: "systems restored in the first 48h of CrowdStrike" },
-  { value: "50", suffix: "+", label: "legacy Windows 7 systems decommissioned to full compliance" },
-  { value: "1", suffix: "st", label: "team at GSK to restore systems by offline recovery" },
-] as const;
-
 export const about = [
-  "I design and build internal AI tools inside GSK R&D Tech. They have to survive real users, real compliance, and a real queue. My current work is one of the first genuinely agentic systems moving towards production in this part of the business.",
-  "It started with a boring observation: generic request forms let people submit almost nothing, so engineers spend their first reply asking for what they should already have. I built a triage layer that asks context-aware follow-up questions at intake, so a ticket arrives actionable instead of arriving twice.",
-  "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them: something working on screen inside the session, then reshaped against what they actually do with it. It skips the round of translation where a requirement quietly turns into a different requirement.",
-  "Before that I spent three years as a lab IT engineer, keeping regulated scientific environments running: incident response, decommissioning, OT network segmentation, and a lot of instruments that do not tolerate downtime. That is where I learned that the interesting part of a system is what it does on a bad day.",
+  {
+    copy: "I am Isaac Griffiths, a Data and Analytics Engineering Manager in GSK R&D Tech. I design and build internal AI tools that have to survive real users, real compliance, and a real queue, and I am now the technical lead of an agentic product, one of the first genuinely agentic systems moving towards production in this part of the business.",
+    highlights: ["Data and Analytics Engineering Manager", "GSK R&D Tech", "technical lead of an agentic product", "genuinely agentic systems"],
+  },
+  {
+    copy: "It started with a boring observation: generic request forms let people submit almost nothing, so engineers spend their first reply asking for what they should already have. I served as technical lead for a triage layer that asks context-aware follow-up questions at intake, so a ticket arrives actionable instead of arriving twice.",
+    highlights: ["context-aware follow-up questions", "actionable"],
+  },
+  {
+    copy: "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them: something working on screen inside the session, then reshaped against what they actually do with it. It skips the round of translation where a requirement quietly turns into a different requirement.",
+    highlights: ["forward deployed", "build alongside them"],
+  },
+  {
+    copy: "Before that I spent three years as a lab IT engineer, keeping regulated scientific environments running: incident response, decommissioning, OT network segmentation, and a lot of instruments that do not tolerate downtime. That is where I learned that the interesting part of a system is what it does on a bad day.",
+    highlights: ["lab IT engineer", "what it does on a bad day"],
+  },
 ] as const;
 
 export type ExperienceRecord = {
   index: string;
   title: string;
+  url: string;
   org: string;
   place: string;
   period: string;
@@ -62,47 +68,57 @@ export type ExperienceRecord = {
 
 export const experience: ExperienceRecord[] = [
   {
-    index: "02",
-    title: "Agentic Engineer, Apprentice",
-    org: "GSK — R&D Tech",
+    index: "03",
+    title: "Data and Analytics Engineering Manager",
+    url: "https://www.gsk.com/",
+    org: "GSK R&D Tech",
     place: "Stevenage",
-    period: "Sep 2025 — present",
+    period: "Aug 2026 – present",
     current: true,
     summary:
-      "Designing and shipping AI-enabled internal tools that raise ticket quality and cut the delay between a scientist asking and an engineer acting.",
+      "Technical lead of an agentic product in Scientific Data Engineering, promoted from the apprenticeship to a manager-grade role four years after joining GSK. I own the product's path from working prototype through stakeholder review into production, and I still build hands-on, sat with the people who use it.",
     points: [
-      "Built an intelligent triage system that asks context-aware follow-up questions at intake, so requests arrive complete and route correctly the first time.",
+      "Technical lead of an agentic product in R&D Tech, one of the function's first genuinely agentic systems progressing towards production.",
+      "Own delivery end to end: prototype, stakeholder review, production readiness, and the conversations in between.",
+      "Promoted from apprentice to a manager-grade position within four years of joining GSK.",
+    ],
+    tags: ["Agentic systems", "Tech lead", "Python", "TypeScript"],
+  },
+  {
+    index: "02",
+    title: "Agentic Engineer, Apprentice",
+    url: "https://www.gsk.com/",
+    org: "GSK R&D Tech",
+    place: "Stevenage",
+    period: "Sep 2025 – Aug 2026",
+    summary:
+      "Designed and shipped AI-enabled tools that improve ticket quality and reduce delays between scientists and engineers. I served as technical lead for a context-aware ticket-triage system that captures complete requests at intake, contributed to one of R&D Tech's first agentic systems moving towards production, and developed a booking system with dashboards for resource-owning teams. I also reverse-engineered and rebuilt a compliant replacement for an internal application whose source code had been lost, verifying its behaviour directly with the scientists who use it. Across each project, I worked with technical and business stakeholders through requirements, testing, documentation, and adoption.",
+    points: [
+      "Served as technical lead for an intelligent ticket-triage system that asks context-aware follow-up questions at intake, so requests arrive complete and route correctly the first time.",
       "Contributed to one of the first truly agentic systems progressing towards production in R&D Tech, from prototype through stakeholder review.",
-      "Building an agentic booking system with dashboards for the teams who own the resources, pair-building with stakeholders so requirements are settled by demonstration rather than documentation.",
+      "Built an agentic booking system with dashboards for the teams who own the resources, pair-building with stakeholders so requirements were settled by demonstration rather than documentation.",
       "Reverse-engineered an internal application whose source code had been lost, confirmed its behaviour rule by rule with the scientists who used it daily, and rebuilt a compliant replacement.",
       "Worked directly with technical and business stakeholders on requirements, user testing, and adoption of practical AI across the function.",
     ],
-    tags: [
-      "Agentic workflows",
-      "LangGraph",
-      "Reverse engineering",
-      "Forward deployed",
-      "Python",
-      "TypeScript",
-      "n8n",
-    ],
+    tags: ["Agentic workflows", "LangGraph", "Python", "TypeScript", "n8n"],
   },
   {
     index: "01",
     title: "Laboratory IT Engineer, Degree Apprentice",
-    org: "GSK — R&D",
+    url: "https://www.gsk.com/",
+    org: "GSK R&D",
     place: "Stevenage",
-    period: "Sep 2022 — Sep 2025",
+    period: "Sep 2022 – Sep 2025",
     summary:
-      "Kept regulated laboratory environments running: instruments, endpoints, OT networks, and the incidents that arrive without warning.",
+      "Kept regulated laboratory environments running across specialist instruments, endpoints, and OT networks. During the CrowdStrike incident, I compiled and managed recovery keys, helping restore 250+ systems inside two days and making our team the first at GSK to recover through offline troubleshooting. I led the removal of 50+ Windows 7 systems to full policy compliance, supported 250+ specialist lab devices, and resolved 20–30 ServiceNow issues each month. I also worked with cybersecurity teams on OT network segmentation and hardware hardening, then documented the work and mentored apprentices and contractors.",
     points: [
-      "During the CrowdStrike incident, compiled and managed BitLocker keys to restore systems ahead of schedule — the first team at GSK to recover systems through offline troubleshooting, with 250+ restored inside two days. (Gold Award)",
+      "During the CrowdStrike incident, compiled and managed BitLocker keys to restore systems ahead of schedule: the first team at GSK to recover systems through offline troubleshooting, with 250+ restored inside two days. (Gold Award)",
       "Led the decommissioning of 50+ Windows 7 systems to 100% policy compliance, closing a standing security exposure. (Silver Award)",
       "Configured and supported 250+ specialist lab devices, and resolved 20–30 ServiceNow tickets a month across software, hardware, and network access. (Multiple Bronze Awards)",
       "Worked with cybersecurity teams on network segmentation and hardware hardening in Operational Technology environments.",
       "Mentored apprentices and contractors, wrote the documentation, and ran the hands-on onboarding.",
     ],
-    tags: ["Incident response", "OT security", "ServiceNow", "Windows", "Networking", "Compliance"],
+    tags: ["Incident response", "OT security", "ServiceNow", "Compliance"],
   },
 ];
 
@@ -152,11 +168,11 @@ export const expertise = [
 export const projects = [
   {
     title: "Intelligent intake and triage",
-    context: "GSK R&D Tech",
+    context: "Technical lead · GSK R&D Tech",
     problem:
       "Generic request forms let users submit the bare minimum, so every ticket started with a round trip before any work could begin.",
     approach:
-      "Designed and built an agentic intake layer that asks context-aware follow-up questions, captures the detail up front, and routes on submit.",
+      "Led the design and build of an agentic intake layer that asks context-aware follow-up questions, captures the detail up front, and routes on submit.",
     result:
       "Tickets arrive actionable rather than arriving twice, cutting the delay between a scientist asking and an engineer starting.",
     tags: ["Agentic", "Triage", "Service operations"],
@@ -179,18 +195,8 @@ export const projects = [
       "Booking requests arrive as plain description and have to become a real reservation against the right resource, held by the right team.",
     approach:
       "Building an agentic flow that interprets the request and handles the booking, with dashboards over the top for the people who own the resources.",
-    result: "In progress — my current build, and where most of the day-to-day agentic work sits.",
+    result: "In progress: my current build, and where most of the day-to-day agentic work sits.",
     tags: ["Agentic", "Booking", "Dashboards", "In progress"],
-  },
-  {
-    title: "Beehive monitoring, IoT",
-    context: "Personal — GSK Stevenage apiary",
-    problem:
-      "Opening a hive to check it is disruptive, and by the time a problem is visible from the outside it is usually late.",
-    approach:
-      "Building sensing around hive weight, temperature, and activity with a colleague, as a volunteer beekeeper on site.",
-    result: "In progress — trend data that answers “is this colony fine?” without lifting the lid.",
-    tags: ["IoT", "Sensors", "Side project"],
   },
   {
     title: "AI news digest pipeline",
@@ -240,27 +246,27 @@ export const education = {
     specialism: "Software Development specialism",
     school: "Anglia Ruskin University, Peterborough",
     detail: "Degree apprenticeship, completed alongside full-time delivery at GSK.",
-    period: "2022 — 2026",
+    period: "2022 – 2026",
     /** Predicted, not conferred. Classification is confirmed on 10 September 2026. */
     status: "Predicted First",
     statusDetail: "330 of 360 credits complete, seven modules at First. Final classification confirmed 10 September 2026.",
     highlights: [
-      "Programming and Networking IoT Project — 83%",
-      "Computer and Network Technologies — 83%",
-      "Information Security Management and Governance — 81%",
-      "Object Orientated Modelling and Data Design — 76%",
-      "Enterprise Analytics — 75%",
+      "Programming and Networking IoT Project | 83%",
+      "Computer and Network Technologies | 83%",
+      "Information Security Management and Governance | 81%",
+      "Object Orientated Modelling and Data Design | 76%",
+      "Enterprise Analytics | 75%",
     ],
   },
   earlier: [
-    { title: "BTEC ICT — Distinction*", detail: "Claires Court School, 2022" },
-    { title: "A Level Geography — B", detail: "Claires Court School, 2022" },
+    { title: "BTEC ICT: Distinction*", detail: "Claires Court School, 2022" },
+    { title: "A Level Geography: B", detail: "Claires Court School, 2022" },
     { title: "10 GCSEs, grades 5–8", detail: "including Maths (8) and ICT (8)" },
   ],
 } as const;
 
 export const interests = [
-  { title: "Volunteer beekeeper", body: "On the GSK Stevenage apiary, which is also where the IoT project came from." },
+  { title: "Rowing", body: "The mix of endurance, timing, and teamwork makes it a useful counterweight to engineering work." },
   { title: "Self-hosting", body: "Unraid and Proxmox at home, mostly so I break deployment in private first." },
   { title: "Photography & video", body: "Shooting and editing in the Adobe suite, which is where the content habit started." },
   { title: "Gym", body: "The one part of the week that does not need a changelog." },
@@ -269,8 +275,6 @@ export const interests = [
 export const nav = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
-  { id: "expertise", label: "Expertise" },
-  { id: "work", label: "Work" },
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },

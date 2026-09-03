@@ -1,32 +1,27 @@
 @import "tailwindcss";
 
-/*
-  Palette: "instrument readout".
-  A blue-cold near-black ground against warm ivory type, with one cold accent:
-  the pale cyan of a screen reporting a value. One accent only — everything else
-  earns attention through spacing and weight.
-*/
+/* Cool slate and teal palette shared with the visual reference. */
 @theme {
-  --color-ink: #0a0d13;
-  --color-ink-sunk: #070a0f;
-  --color-ink-raised: #111621;
-  --color-ink-hover: #161d2b;
-  --color-line: #1e2634;
-  --color-line-strong: #2f3a4d;
-  --color-ivory: #eceae4;
-  --color-muted: #8a93a5;
-  --color-faint: #7a8499;
-  --color-accent: #7dd3fc;
-  --color-accent-deep: #4ea8ce;
+  --color-ink: #0f172a;
+  --color-ink-sunk: #0b1120;
+  --color-ink-raised: #1e293b;
+  --color-ink-hover: #263449;
+  --color-line: #1e293b;
+  --color-line-strong: #334155;
+  --color-ivory: #e2e8f0;
+  --color-muted: #94a3b8;
+  /* Lightened from #64748b (slate-500) to pass WCAG AA 4.5:1 on both
+     the page ground (#0f172a) and the form panel (#151d30). */
+  --color-faint: #7787a0;
+  --color-accent: #00fefe;
+  --color-accent-deep: #00d6d6;
 
-  --font-display: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
-  --font-sans: var(--font-instrument), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-inter), Inter, "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
   background-color: var(--color-ink);
   /* form controls and scrollbars follow the page, not the OS */
   color-scheme: dark;
@@ -34,8 +29,10 @@ html {
 
 body {
   background-color: var(--color-ink);
-  color: var(--color-ivory);
+  color: var(--color-muted);
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.625;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -51,94 +48,56 @@ body {
   border-radius: 2px;
 }
 
-/* Display type is set tight and optically large — Bricolage's optical-size axis
-   does the work, so headings never need extra tracking hacks. */
-.display {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 0.98;
-  font-variation-settings: "opsz" 48;
+/* Hash navigation and the native intent selector are progressive fallbacks.
+   They remain functional when a browser has not loaded the client bundle yet;
+   the React scrollspy and custom listbox take over after hydration. */
+@media (min-width: 64rem) {
+  html:not([data-client-ready])
+    body:has(#about:target, #experience:target, #skills:target, #education:target, #contact:target)
+    [data-section-link][aria-current="true"]
+    [data-section-marker] {
+    width: 2rem;
+    background-color: rgb(255 255 255 / 0.25);
+  }
+
+  html:not([data-client-ready])
+    body:has(#about:target, #experience:target, #skills:target, #education:target, #contact:target)
+    [data-section-link][aria-current="true"]
+    [data-section-name] {
+    color: var(--color-faint);
+  }
+
+  html:not([data-client-ready]) body:has(#about:target) [data-section-link="about"] [data-section-marker],
+  html:not([data-client-ready]) body:has(#experience:target) [data-section-link="experience"] [data-section-marker],
+  html:not([data-client-ready]) body:has(#skills:target) [data-section-link="skills"] [data-section-marker],
+  html:not([data-client-ready]) body:has(#education:target) [data-section-link="education"] [data-section-marker],
+  html:not([data-client-ready]) body:has(#contact:target) [data-section-link="contact"] [data-section-marker] {
+    width: 4rem;
+    background-color: var(--color-accent);
+  }
+
+  html:not([data-client-ready]) body:has(#about:target) [data-section-link="about"] [data-section-name],
+  html:not([data-client-ready]) body:has(#experience:target) [data-section-link="experience"] [data-section-name],
+  html:not([data-client-ready]) body:has(#skills:target) [data-section-link="skills"] [data-section-name],
+  html:not([data-client-ready]) body:has(#education:target) [data-section-link="education"] [data-section-name],
+  html:not([data-client-ready]) body:has(#contact:target) [data-section-link="contact"] [data-section-name] {
+    color: var(--color-ivory);
+  }
 }
 
-/* Section keys read like log fields, because the content genuinely is a record.
-   The negative margin cancels the trailing letter-space so a centred key sits on
-   the true optical centre rather than half a tracking unit to its left. */
+/* Small uppercase mono keys: dates, field labels, section eyebrows. The
+   negative margin cancels the trailing letter-space so the key sits on its
+   true optical edge rather than half a tracking unit inside it. */
 .key {
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
-  margin-right: -0.18em;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  margin-right: -0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
 }
 
-/* Shared pill button. text-indent does the same optical correction as above,
-   for text centred inside a flex box rather than by text-align. */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.75rem;
-  padding-inline: 1.75rem;
-  border-radius: 9999px;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.16em;
-  text-indent: 0.08em;
-  text-transform: uppercase;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-/* Hero atmosphere: a slow cold bloom — cyan through steel into midnight, so the
-   format is shared with the reference site and the hue is not. */
-.aurora {
-  background:
-    radial-gradient(55% 50% at 18% 28%, rgba(125, 211, 252, 0.42), transparent 62%),
-    radial-gradient(48% 46% at 78% 26%, rgba(78, 168, 206, 0.38), transparent 64%),
-    radial-gradient(62% 58% at 52% 78%, rgba(46, 78, 140, 0.5), transparent 66%),
-    radial-gradient(38% 38% at 88% 72%, rgba(125, 211, 252, 0.22), transparent 62%);
-  filter: blur(58px) saturate(125%);
-  animation: drift 26s ease-in-out infinite alternate;
-}
-
-@keyframes drift {
-  from {
-    transform: translate3d(-2%, -1%, 0) scale(1.05);
-  }
-  to {
-    transform: translate3d(3%, 2%, 0) scale(1.16);
-  }
-}
-
-/* Frosted panel used for the hero identity card and the nav bar. */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(22px) saturate(130%);
-  -webkit-backdrop-filter: blur(22px) saturate(130%);
-}
-
-/* One quiet ambient device: a faint grid, like graph paper under the record. */
-.grid-field {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
-  background-size: 76px 76px;
-  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 20%, transparent 78%);
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+.section-label {
+  font-size: 0.875rem;
 }
 
 @keyframes pulse-dot {
@@ -153,11 +112,6 @@ body {
   }
 }
 
-.reveal {
-  opacity: 0;
-  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
 .live-dot {
   animation: pulse-dot 2.4s ease-in-out infinite;
 }
@@ -166,12 +120,7 @@ body {
   html {
     scroll-behavior: auto;
   }
-  .reveal {
-    opacity: 1;
-    animation: none;
-  }
-  .live-dot,
-  .aurora {
+  .live-dot {
     animation: none;
   }
   *,

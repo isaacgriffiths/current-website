@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Inter } from "next/font/google";
 import { person } from "@/content/profile";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const instrument = Instrument_Sans({
-  variable: "--font-instrument",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -23,14 +17,17 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "Agentic engineer at GSK R&D Tech, forward deployed. I build agent workflows, reverse-engineer what has no source left, and ship internal tools that hold up in regulated operations. Buckinghamshire, working across London and the South East.";
+  "Agentic engineer at GSK R&D Tech, forward deployed. I build agent workflows and internal tools that hold up in regulated operations. Buckinghamshire, UK.";
 
-const title = `${person.name} — ${person.billing}`;
+const title = `${person.name} | ${person.billing}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://isaacgriffiths.com"),
   title,
   description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title,
     description,
@@ -38,17 +35,45 @@ export const metadata: Metadata = {
     siteName: person.name,
     locale: "en_GB",
     type: "profile",
+    images: [{ url: person.photo, alt: person.name }],
   },
-  icons: {
-    icon: [
-      {
-        url:
-          "data:image/svg+xml," +
-          encodeURIComponent(
-            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0a0d13"/><text x="50" y="70" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="56" font-weight="700" fill="#f0a93b">IG</text></svg>`,
-          ),
-        type: "image/svg+xml",
-      },
+  twitter: {
+    card: "summary",
+    title,
+    description,
+    images: [person.photo],
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://isaacgriffiths.com/#profile",
+  url: "https://isaacgriffiths.com/",
+  dateCreated: "2025-03-19",
+  dateModified: "2026-08-28",
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://isaacgriffiths.com/#person",
+    name: person.name,
+    jobTitle: person.role,
+    description: person.tagline,
+    url: "https://isaacgriffiths.com/",
+    image: `https://isaacgriffiths.com${person.photo}`,
+    email: `mailto:${person.email}`,
+    worksFor: { "@type": "Organization", name: "GSK", url: "https://www.gsk.com" },
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "Buckinghamshire",
+      addressCountry: "GB",
+    },
+    sameAs: [person.links.linkedin, person.links.github],
+    knowsAbout: [
+      "Agentic AI systems",
+      "Generative AI engineering",
+      "Data and analytics engineering",
+      "Forward deployed engineering",
+      "Enterprise automation",
     ],
   },
 };
@@ -56,7 +81,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GB">
-      <body className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${plexMono.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "website",
+  "pages_build_output_dir": "./out",
+  "compatibility_date": "2025-03-19",
+  "r2_buckets": [
+    {
+      "binding": "CV_BUCKET",
+      "bucket_name": "isaacgriffiths-private-assets"
+    }
+  ]
+}
