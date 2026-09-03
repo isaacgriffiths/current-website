@@ -92,15 +92,15 @@ export const experience: ExperienceRecord[] = [
     place: "Stevenage",
     period: "Sep 2025 – Aug 2026",
     summary:
-      "Designed and shipped AI-enabled tools that improve ticket quality and reduce delays between scientists and engineers. I served as technical lead for a context-aware ticket-triage system that captures complete requests at intake, contributed to one of R&D Tech's first agentic systems moving towards production, and developed a booking system with dashboards for resource-owning teams. I also reverse-engineered and rebuilt a compliant replacement for an internal application whose source code had been lost, verifying its behaviour directly with the scientists who use it. On the triage platform I co-authored and presented the architecture, then ran the testing cycle to production readiness: 50+ structured test cases including adversarial inputs, API test suites, trace-identifier logging and peer review on every change.",
+      "Designed and shipped AI-enabled tools that improve ticket quality and reduce delays between scientists and engineers. I served as technical lead for a context-aware ticket-triage system that captures complete requests at intake, contributed to one of R&D Tech's first agentic systems moving towards production, and prototyped an agentic booking system with dashboards for resource-owning teams. I also reverse-engineered and rebuilt a compliant replacement for an internal application whose source code had been lost, verifying its behaviour directly with the scientists who use it. On the triage platform I co-authored and presented the architecture, then ran the testing cycle to production readiness: 50+ structured test cases including adversarial inputs, API test suites, trace-identifier logging and peer review on every change.",
     points: [
       "Served as technical lead for an intelligent ticket-triage system that asks context-aware follow-up questions at intake, so requests arrive complete and route correctly the first time.",
       "Co-authored and formally presented the platform architecture (an orchestrator with five specialised sub-agents, an MCP layer into ServiceNow), then ran the testing cycle to production readiness: 50+ structured test cases including adversarial inputs, Postman API suites, trace-identifier logging across agent boundaries, confidence thresholds as a quality gate, and peer review on every change.",
-      "Built an agentic booking system with dashboards for the teams who own the resources, pair-building with stakeholders so requirements were settled by demonstration rather than documentation.",
-      "Reverse-engineered an internal application whose source code had been lost, confirmed its behaviour rule by rule with the scientists who used it daily, and rebuilt a compliant replacement.",
+      "Prototyped and piloted an agentic booking system with dashboards for the teams who own the resources, pair-building with stakeholders so requirements were settled by demonstration rather than documentation.",
+      "Reverse-engineered an internal application written in a language GSK no longer supported, with no source code, from the running system and the scientists' own documentation, then rebuilt a compliant replacement in Next.js and TypeScript.",
       "Worked directly with technical and business stakeholders on requirements, user testing, and adoption of practical AI across the function.",
     ],
-    tags: ["Agentic workflows", "LangGraph", "FastAPI", "Next.js", "Google Cloud Run", "n8n"],
+    tags: ["Agentic workflows", "LangGraph", "FastAPI", "Next.js", "Google Cloud Run"],
   },
   {
     index: "01",
@@ -184,7 +184,7 @@ export const projects = [
     problem:
       "An internal application scientists relied on was falling out of policy, and its source code no longer existed. No repository, no specification, and no option to simply leave it running.",
     approach:
-      "Reverse-engineered the behaviour from the running system and whatever documentation survived, then confirmed it rule by rule with the scientists who used it daily. Rebuilt a compliant replacement from that verified picture.",
+      "Reverse-engineered the behaviour from the running system and whatever documentation survived, then confirmed it rule by rule with the scientists who used it daily. Rebuilt a compliant replacement in Next.js and TypeScript from that verified picture.",
     result:
       "A like-for-like replacement inside policy, with the application's behaviour written down for the first time and checked against the original by the people who depend on it.",
     tags: ["Reverse engineering", "Legacy replacement", "Compliance", "Scientist-verified"],
@@ -213,10 +213,10 @@ export const projects = [
     title: "TwinList",
     context: "Personal · shipped product",
     problem:
-      "Turning a pile of thrifted stock into Vinted and eBay listings means photographing, describing, pricing and form-filling every item, twice.",
+      "Listing stock on Vinted and eBay means describing, pricing and form-filling every item by hand, twice.",
     approach:
-      "A Next.js and Electron app where vision models write each listing from the photos, a review deck keeps the seller in the loop, and a Chrome extension fills the live marketplace forms, escalating any field it cannot fill with confidence. Corrections feed a pgvector example bank so it learns the seller's judgement.",
-    result: "A camera-roll dump becomes posted listings, with the seller approving rather than typing.",
+      "A Next.js and Electron app: product photos go in, vision models draft the listing details, the seller edits and approves them in a review deck, and a Chrome extension posts them to the live marketplace forms, escalating any field it cannot fill with confidence. Corrections feed a pgvector example bank so it learns the seller's judgement.",
+    result: "Photos become posted listings, with the seller editing rather than typing.",
     tags: ["Next.js", "AI SDK", "PostgreSQL", "Chrome extension"],
   },
   {
