@@ -51,7 +51,7 @@ const personJsonLd = {
   "@id": "https://isaacgriffiths.com/#profile",
   url: "https://isaacgriffiths.com/",
   dateCreated: "2025-03-19",
-  dateModified: "2026-08-28",
+  dateModified: "2026-09-03",
   mainEntity: {
     "@type": "Person",
     "@id": "https://isaacgriffiths.com/#person",
