@@ -115,12 +115,11 @@ export const experience: ExperienceRecord[] = [
     summary:
       "I kept regulated laboratory environments running across specialist instruments, endpoints and OT networks. When CrowdStrike took the site down I was the first at GSK Stevenage to restore an affected lab PC, and the BitLocker approach I worked out became the site's remediation procedure: 250+ systems back inside two days. I led the removal of 50+ Windows 7 systems under the GSK Legacy Programme, automated the lab PC build, supported 250+ specialist lab devices and worked with cybersecurity on OT network segmentation. Eleven GSK recognitions in three years: one Gold, one Silver, five Bronze and four peer awards.",
     points: [
-      "CrowdStrike recovery. I was first at GSK Stevenage to restore an affected lab PC in the global outage. I worked out the BitLocker recovery approach the site adopted, worked the weekend to help restore 250+ systems inside two days, then wrote the rebuild SOPs. (Gold Award)",
-      "Windows 7 Legacy Programme. I led the decommissioning of 50+ end-of-life systems, which helped close a 'very high' compliance-board risk at 100% policy compliance. (Silver Award)",
-      "PC build automation. I analysed and automated the lab PC build across four teams: swim-lane mapping, WDS/MDT imaging, PowerShell for software, domain join and hardening. Build time and error rates both fell. I also delivered a 50+ slim-client rollout and a 20-iPad pilot for logging lab issues.",
-      "I owned the availability of 250+ specialist lab computers and OT assets, resolved 20–30 ServiceNow tickets a month and fixed instrument connectivity layer by layer: ports, VLANs, firewall policy, OS. (Five Bronze Awards)",
-      "I worked with cybersecurity on OT segmentation and hardware hardening without disturbing live experiments.",
-      "I mentored apprentices, technicians and contractors, taught lab teams enough that they needed IT less, wrote the documentation and ran the hands-on onboarding.",
+      "CrowdStrike recovery. I was first at GSK Stevenage to restore an affected lab PC in the global outage. I worked out the BitLocker recovery approach the site adopted, worked the weekend to help restore 250+ systems within two days, then wrote the rebuild SOPs. GSK Gold Recognition.",
+      "Windows 7 Legacy Programme. I led the decommissioning of 50+ end-of-life systems, which helped close a compliance-board risk rated very high. GSK Silver Recognition.",
+      "PC build automation. I analysed and automated the lab PC build across four teams (swim-lane mapping, WDS/MDT imaging, PowerShell for software, domain join and hardening), cutting build time and error rates. I also delivered a 50+ slim-client rollout and a 20-iPad issue-logging pilot.",
+      "I owned the availability of 250+ specialist laboratory computers and OT assets, and worked with cybersecurity on OT segmentation and hardware hardening without disturbing live experiments.",
+      "I fixed instrument connectivity faults layer by layer (ports, VLANs, firewall policy, OS): six instrument PCs, a networked 3D printer, a Tecan liquid handler. I mentored apprentices, technicians and contractors, and taught lab teams enough that they needed IT less. Five Bronze Recognitions.",
     ],
     tags: ["Windows", "PowerShell", "WDS/MDT", "Active Directory", "BitLocker", "VLANs and firewall policy", "OT segmentation", "ServiceNow"],
   },
@@ -282,12 +281,12 @@ export const skills = [
   {
     group: "Cloud & delivery",
     items: ["Google Cloud Platform", "Microsoft Azure", "GitHub", "Cloudflare", "Docker"],
-    where: "Triage agent in Docker on Cloud Run via GitHub Actions and Artifact Registry, all of it mine; Azure OpenAI through GSK's Kong gateway. Cloudflare Workers, D1 and Pages for the products and this site.",
+    where: "Triage agent in Docker on Cloud Run via GitHub Actions and Artifact Registry, all of it mine; Azure OpenAI through GSK's Kong gateway. Cloudflare Workers, D1, Pages and R2 for licensing and this site.",
   },
   {
     group: "AI-native development",
     items: ["Claude Code", "GitHub Copilot agent", "Cursor", "Codex", "Ollama", "Open WebUI", "Rapid prototyping", "Review, testing and debugging of generated code"],
-    where: "At GSK: Cursor at the start in 2025, then the Copilot coding agent, now Claude Code only. At home: Claude Code, Cursor, Codex and a self-hosted model on an old gaming GPU. Claude Code writes most of the code; I specify, review, test and debug it.",
+    where: "At GSK: Cursor at the start in 2025, then the Copilot coding agent, now Claude Code only. At home: Claude Code, Cursor, Codex and a self-hosted model on an old gaming GPU. Claude Code writes most of the code. I specify, review, test and debug it: pytest and Jest in CI, Postman, SonarQube, Playwright end to end on the products.",
   },
   {
     group: "Infrastructure",
