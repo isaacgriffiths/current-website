@@ -49,7 +49,7 @@ type ResendEmail = {
 
 const CV_REQUEST_INTENT = "A copy of my CV";
 const LEGACY_CV_REQUEST_INTENT = "A copy of your CV";
-const CV_OBJECT_KEY = "documents/Isaac-Griffiths-CV-2026-09-v10.pdf";
+const CV_OBJECT_KEY = "documents/Isaac-Griffiths-CV-2026-09-v11.pdf";
 
 const json = (body: unknown, status: number) =>
   new Response(JSON.stringify(body), {
