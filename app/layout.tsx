@@ -17,7 +17,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "AI Engineer at GSK R&D Tech, building agentic systems, forward deployed. I build agent workflows and internal tools that hold up in regulated operations. London, UK.";
+  "AI Engineer at GSK R&D Tech, building agentic systems in Python, forward deployed. Internal AI tools that hold up in regulated operations. London, UK.";
 
 const title = `${person.name} | ${person.billing}`;
 

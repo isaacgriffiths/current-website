@@ -2,6 +2,7 @@ import About from "@/components/About";
 import ContactSection from "@/components/ContactSection";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 import Sidebar from "@/components/Sidebar";
 import Skills from "@/components/Skills";
 import Spotlight from "@/components/Spotlight";
@@ -31,6 +32,7 @@ export default function Home() {
             <About />
             <Experience />
             <Skills />
+            <Projects />
             <Education />
             <ContactSection />
 
