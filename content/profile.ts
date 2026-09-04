@@ -4,9 +4,9 @@
 export const person = {
   name: "Isaac Griffiths",
   initials: "IG",
-  role: "Data Engineer",
+  role: "AI Engineer",
   /** How he sells himself, as distinct from what his badge says. */
-  billing: "AI-native agentic engineer, forward deployed",
+  billing: "AI engineer building agentic systems, forward deployed",
   employer: "GSK R&D Tech",
   location: "London, UK",
   /** Where he will actually work, which matters more to a recruiter than where he sleeps. */
@@ -36,16 +36,16 @@ export const triage = {
 
 export const about = [
   {
-    copy: "I am Isaac Griffiths, a Data Engineer in GSK R&D Tech on a manager-grade job profile. I design and build internal AI tools that have to survive real users, real compliance, and a real queue, and I am now the technical lead of an agentic product, one of the first genuinely agentic systems moving towards production in this part of the business.",
-    highlights: ["Data Engineer", "GSK R&D Tech", "manager-grade job profile", "technical lead of an agentic product"],
+    copy: "I am Isaac Griffiths, an AI Engineer in GSK R&D Tech and the technical lead of an agentic product, one of the first genuinely agentic systems in this part of the business. I design and build internal AI tools that have to survive real users, real compliance, and a real queue. I joined as a degree apprentice in 2022 and was promoted onto a manager-grade job profile in August 2026.",
+    highlights: ["AI Engineer", "GSK R&D Tech", "technical lead of an agentic product", "manager-grade job profile"],
   },
   {
     copy: "It started with a boring observation: generic request forms let people submit almost nothing, so engineers spend their first reply asking for what they should already have. I served as technical lead for a triage layer that asks context-aware follow-up questions at intake, so a ticket arrives actionable instead of arriving twice.",
     highlights: ["context-aware follow-up questions", "actionable"],
   },
   {
-    copy: "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them: something working on screen inside the session, then reshaped against what they actually do with it. I am AI-native about the building itself: Claude Code writes the Python and TypeScript, and I specify the system, direct the agents, and read, review, test and debug what comes out.",
-    highlights: ["forward deployed", "build alongside them", "AI-native"],
+    copy: "The way I work is closer to forward deployed than to a backlog. I sit with the team that has the problem and build alongside them: something working on screen inside the session, then reshaped against what they actually do with it. I build with Claude Code as my primary tool: it writes most of the Python and TypeScript, and I specify the system, direct it, and read, review, test and debug what comes out. That second half decides whether anything ships.",
+    highlights: ["forward deployed", "build alongside them", "Claude Code as my primary tool"],
   },
   {
     copy: "Before that I spent three years as a lab IT engineer, keeping regulated scientific environments running: incident response, decommissioning, OT network segmentation, and a lot of instruments that do not tolerate downtime. That is where I learned that the interesting part of a system is what it does on a bad day.",
@@ -69,38 +69,37 @@ export type ExperienceRecord = {
 export const experience: ExperienceRecord[] = [
   {
     index: "03",
-    title: "Data Engineer",
+    title: "AI Engineer",
     url: "https://www.gsk.com/",
     org: "GSK R&D Tech",
-    place: "Stevenage",
+    place: "Stevenage and London",
     period: "Aug 2026 – present",
     current: true,
     summary:
-      "Technical lead of an agentic product in Scientific Data Engineering, promoted from the apprenticeship onto a manager-grade job profile (Data and Analytics Engineering Manager) four years after joining GSK. I own the product's path from working prototype through stakeholder review into production, and I still build hands-on, sat with the people who use it.",
+      "Technical lead of an agentic product in Scientific Data Engineering. HR title Data Engineer, on the Data and Analytics Engineering Manager job profile. I own the product's path from working prototype through architecture review to production, and I still build hands-on, sat with the people who use it.",
     points: [
-      "Technical lead of an agentic product in R&D Tech, one of the function's first genuinely agentic systems progressing towards production.",
-      "Own delivery end to end: prototype, stakeholder review, production readiness, and the conversations in between.",
-      "Promoted from apprentice onto a manager-grade job profile within four years of joining GSK; business title Data Engineer.",
+      "Technical lead for the team's first agentic product: the architecture, the delivery plan and the path from prototype through architecture review to production, with the scientists who will use it in the room.",
+      "Designing the orchestration layer (Python, FastAPI, LangGraph) between foundation models and internal scientific data stores: audit logging for every automated action, confidence thresholds as a gate, and a human handoff whenever the model is uncertain.",
+      "Aligning principal data scientists, lab researchers and IT compliance to secure architecture approvals in a GxP-adjacent environment; mentoring apprentices on prompt evaluation and structured outputs.",
     ],
-    tags: ["Agentic systems", "Tech lead", "AI-native", "Python", "TypeScript"],
+    tags: ["Python", "FastAPI", "LangGraph", "Pydantic", "Azure OpenAI", "Gemini", "Google Cloud", "Claude Code"],
   },
   {
     index: "02",
-    title: "Agentic Engineer, Apprentice",
+    title: "AI Engineer, Degree Apprentice",
     url: "https://www.gsk.com/",
     org: "GSK R&D Tech",
     place: "Stevenage",
     period: "Sep 2025 – Aug 2026",
     summary:
-      "Designed and shipped AI-enabled tools that improve ticket quality and reduce delays between scientists and engineers. I served as technical lead for a context-aware ticket-triage system that captures complete requests at intake, contributed to one of R&D Tech's first agentic systems moving towards production, and prototyped an agentic booking system with dashboards for resource-owning teams. I also reverse-engineered and rebuilt a compliant replacement for an internal application whose source code had been lost, verifying its behaviour directly with the scientists who use it. On the triage platform I co-authored and presented the architecture, then ran the testing cycle to production readiness: 50+ structured test cases including adversarial inputs, API test suites, trace-identifier logging and peer review on every change.",
+      "Built the intake and triage agent that turns incomplete lab support requests into actionable tickets, prototyped and piloted an agentic instrument booking flow, and rebuilt a compliant replacement for an internal application whose source code had been lost, verifying its behaviour directly with the scientists who use it. On the triage platform I co-authored and presented the architecture, then ran the testing cycle: 50+ structured test cases including adversarial inputs, Postman suites, trace-identifier logging across agent boundaries and peer review on every change.",
     points: [
-      "Served as technical lead for an intelligent ticket-triage system that asks context-aware follow-up questions at intake, so requests arrive complete and route correctly the first time.",
-      "Co-authored and formally presented the platform architecture (an orchestrator with five specialised sub-agents, an MCP layer into ServiceNow), then ran the testing cycle to production readiness: 50+ structured test cases including adversarial inputs, Postman API suites, trace-identifier logging across agent boundaries, confidence thresholds as a quality gate, and peer review on every change.",
-      "Prototyped and piloted an agentic booking system with dashboards for the teams who own the resources, pair-building with stakeholders so requirements were settled by demonstration rather than documentation.",
-      "Reverse-engineered an internal application written in a language GSK no longer supported, with no source code, from the running system and the scientists' own documentation, then rebuilt a compliant replacement in Next.js and TypeScript.",
-      "Worked directly with technical and business stakeholders on requirements, user testing, and adoption of practical AI across the function.",
+      "Intake and triage agent: replaced hand-raised, incomplete lab support tickets with an agentic intake that validates each request against a dynamic schema, asks for the missing error codes, instrument IDs, logs and urgency, then raises an actionable ticket for the right team. LangGraph, FastAPI and Next.js, deployed to Google Cloud Run through GitHub Actions, with an MCP tool server against the live ServiceNow API.",
+      "Architecture and QA: co-authored and presented the platform design (orchestrator and supervisor pattern, five specialised sub-agents, session state and audit history in the data layer), then ran the testing cycle: 50+ structured cases including adversarial inputs, Postman suites, trace-identifier logging across agent boundaries, confidence thresholds as a quality gate, peer review and a SonarQube gate in CI.",
+      "Legacy rebuild with no source code: shipped a compliant like-for-like replacement for a tool scientists relied on, written in a language GSK no longer supported, reverse-engineered from the running system and the scientists' own documentation, every rule verified with its daily users, rebuilt in Next.js and TypeScript with Claude Code, then taken through UAT and sign-off.",
+      "Instrument booking pilot: prototyped and piloted a conversational booking flow (LangGraph, FastAPI, Next.js dashboards) that matches a natural-language request to the right instrument, checks availability and syncs allocations to dashboards for the owning teams; demonstrated live to scientists in the Stevenage labs.",
     ],
-    tags: ["Agentic workflows", "LangGraph", "FastAPI", "Next.js", "Google Cloud Run"],
+    tags: ["Python", "LangGraph", "MCP", "FastAPI", "Next.js", "TypeScript", "Docker", "Google Cloud Run", "GitHub Actions", "pytest", "SonarQube"],
   },
   {
     index: "01",
@@ -119,7 +118,7 @@ export const experience: ExperienceRecord[] = [
       "Worked with cybersecurity teams on network segmentation and hardware hardening in Operational Technology environments.",
       "Mentored apprentices and contractors, educated lab teams so they depended less on IT, wrote the documentation, and ran the hands-on onboarding.",
     ],
-    tags: ["Incident response", "OT security", "PowerShell", "ServiceNow", "Compliance"],
+    tags: ["Windows", "PowerShell", "WDS/MDT", "Active Directory", "BitLocker", "VLANs and firewall policy", "OT segmentation", "ServiceNow"],
   },
 ];
 
@@ -136,10 +135,10 @@ export const expertise = [
   },
   {
     title: "AI-native engineering, with the review to match",
-    body: "I do not hand-write Python or TypeScript any more. At work Claude Code writes the code (Cursor at the very start, then the GitHub Copilot coding agent); at home it is Claude Code, Cursor, Codex and a small self-hosted model on an old gaming GPU. I specify the system, direct the agents, and read, review, test and debug everything that comes out. That second half is the part that decides whether any of it ships.",
+    body: "I build with Claude Code as my primary tool. At work it writes most of the code (Cursor at the very start, then the GitHub Copilot coding agent); at home it is Claude Code, Cursor, Codex and a small self-hosted model on an old gaming GPU. I specify the system, direct it, and read, review, test and debug everything it produces. That second half is the part that decides whether any of it ships.",
     points: [
       "Claude Code as the daily toolchain at work; Cursor, Codex, Ollama and OpenCode at home",
-      "Python and TypeScript read, reviewed and debugged, never typed by hand",
+      "Python and TypeScript read, reviewed, tested and debugged, every line",
       "Tested like it matters: adversarial cases, API suites, trace logging, peer review",
       "Reverse engineering when there is no source to work from",
     ],
@@ -173,7 +172,7 @@ export const projects = [
     problem:
       "Generic request forms let users submit the bare minimum, so every ticket started with a round trip before any work could begin.",
     approach:
-      "Led the design and build of an agentic intake layer that asks context-aware follow-up questions, captures the detail up front, and routes on submit.",
+      "Led the design and build of an agentic intake layer (LangGraph, FastAPI, Next.js on Google Cloud Run, an MCP tool server against ServiceNow) that asks context-aware follow-up questions, captures the detail up front, and routes on submit.",
     result:
       "Tickets arrive actionable rather than arriving twice, cutting the delay between a scientist asking and an engineer starting.",
     tags: ["Agentic", "Triage", "Service operations"],
@@ -195,9 +194,9 @@ export const projects = [
     problem:
       "Booking requests arrive as plain description and have to become a real reservation against the right resource, held by the right team.",
     approach:
-      "Building an agentic flow that interprets the request and handles the booking, with dashboards over the top for the people who own the resources.",
-    result: "In progress: my current build, and where most of the day-to-day agentic work sits.",
-    tags: ["Agentic", "Booking", "Dashboards", "In progress"],
+      "Built an agentic flow (LangGraph, FastAPI, Next.js dashboards) that interprets the request and handles the booking, with dashboards over the top for the people who own the resources.",
+    result: "Prototyped and piloted, demonstrated live to scientists in the Stevenage labs.",
+    tags: ["Agentic", "Booking", "Dashboards", "Pilot"],
   },
   {
     title: "ShipStamp",

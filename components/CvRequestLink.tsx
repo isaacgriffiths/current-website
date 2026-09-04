@@ -9,7 +9,7 @@ export default function CvRequestLink() {
   return (
     <ArrowLink
       href="#contact"
-      label="Request my CV and receive it by email"
+      label="Get my CV by email: one form, sent straight away"
       className="text-base font-semibold"
       onClick={() => {
         window.dispatchEvent(
@@ -17,7 +17,7 @@ export default function CvRequestLink() {
         );
       }}
     >
-      Request my CV
+      Get my CV by email
     </ArrowLink>
   );
 }

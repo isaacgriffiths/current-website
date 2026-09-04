@@ -17,7 +17,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "Agentic engineer at GSK R&D Tech, forward deployed. I build agent workflows and internal tools that hold up in regulated operations. London, UK.";
+  "AI Engineer at GSK R&D Tech, building agentic systems, forward deployed. I build agent workflows and internal tools that hold up in regulated operations. London, UK.";
 
 const title = `${person.name} | ${person.billing}`;
 
@@ -60,7 +60,7 @@ const personJsonLd = {
   "@id": "https://isaacgriffiths.com/#profile",
   url: "https://isaacgriffiths.com/",
   dateCreated: "2025-03-19",
-  dateModified: "2026-09-03",
+  dateModified: "2026-09-04",
   mainEntity: {
     "@type": "Person",
     "@id": "https://isaacgriffiths.com/#person",
