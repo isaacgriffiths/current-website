@@ -2,7 +2,7 @@
 
 > Personal site of Isaac Griffiths, AI Engineer at GSK R&D Tech, London, UK. He builds agentic systems, forward deployed: agent workflows and internal AI tools that hold up in regulated operations.
 
-Isaac Griffiths is an AI Engineer in GSK R&D Tech and the technical lead of an agentic product in Scientific Data Engineering. He builds agentic systems (Python, FastAPI, LangGraph, MCP, TypeScript, Next.js, Docker on Google Cloud Run), works embedded alongside the teams who have the problem, builds with Claude Code as his primary tool and reviews, tests and debugs everything it produces, and previously spent three years as a laboratory IT engineer keeping regulated scientific environments running. On the side he has shipped ShipStamp and TwinList.
+Isaac Griffiths is an AI Engineer in GSK R&D Tech and the technical lead of an agentic product in Scientific Data Engineering. He builds agentic systems in Python, FastAPI, LangGraph, MCP, TypeScript and Next.js, deployed in Docker on Google Cloud Run, and works embedded alongside the teams who have the problem. Claude Code is his primary tool: it writes most of the code, and he reviews, tests and debugs everything it produces. Before that he spent three years as a laboratory IT engineer keeping regulated scientific environments running. On the side he has shipped ShipStamp and TwinList.
 
 ## Site
 

@@ -25,8 +25,8 @@ export default function ContactSection() {
           </h3>
           <p className="mt-4 max-w-xl leading-relaxed lg:mt-3">
             I am interested in agentic and forward deployed engineering roles where AI has to
-            survive real users, real operations, and real constraints. Tell me what you are
-            building, what is stuck, or ask for my full CV. This form lands directly in my inbox.
+            survive real users, real operations and real constraints. Tell me what you are
+            building, or what is stuck. Or just ask for my CV. The form lands directly in my inbox.
           </p>
 
           <a
