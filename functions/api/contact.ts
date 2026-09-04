@@ -5,7 +5,7 @@
  * Required secrets (Pages project -> Settings -> Environment variables):
  *   RESEND_API_KEY - Resend API key
  *   CONTACT_TO     - inbox that receives the message
- *   CONTACT_FROM   - verified Resend sender, e.g. "Isaac <hello@isaacgriffiths.com>"
+ *   CONTACT_FROM   - verified Resend sender, e.g. "Isaac <isaacgriffiths001@gmail.com>"
  * Required binding:
  *   CV_BUCKET - private R2 bucket containing the current CV
  * Optional:
@@ -49,7 +49,7 @@ type ResendEmail = {
 
 const CV_REQUEST_INTENT = "A copy of my CV";
 const LEGACY_CV_REQUEST_INTENT = "A copy of your CV";
-const CV_OBJECT_KEY = "documents/Isaac-Griffiths-CV-2026-09-v11.pdf";
+const CV_OBJECT_KEY = "documents/Isaac-Griffiths-CV-2026-09-v12.pdf";
 
 const json = (body: unknown, status: number) =>
   new Response(JSON.stringify(body), {
@@ -291,7 +291,7 @@ export const onRequestPost = async (context: {
     return sendWithResend(env.RESEND_API_KEY!, {
       from: env.CONTACT_FROM!,
       to: [email],
-      reply_to: "hello@isaacgriffiths.com",
+      reply_to: "isaacgriffiths001@gmail.com",
       subject: requestedCv
         ? "CV from Isaac Griffiths"
         : `Thanks for getting in touch, ${firstName}`,

@@ -15,7 +15,7 @@ export const person = {
   photo: "/isaac.jpg",
   tagline:
     "I build agentic systems that make enterprise operations ask better questions. Usually sat next to the people who have the problem.",
-  email: "hello@isaacgriffiths.com",
+  email: "isaacgriffiths001@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/in/isaacgriffiths/",
     github: "https://github.com/isaacgriffiths",
