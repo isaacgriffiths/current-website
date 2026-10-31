@@ -271,7 +271,7 @@ export const skills = [
       "User testing",
       "Adoption & handover",
     ],
-    where: "Every GSK build since 2025: requirements settled with scientists in the room, then UAT, sign-off and training across lab teams.",
+    where: "GSK builds since 2025 shaped with scientists in the room and tested with them in UAT. The legacy rebuild is signed off, the booking platform is in production and the triage agent is in UAT across five labs.",
   },
   {
     group: "Automation",
