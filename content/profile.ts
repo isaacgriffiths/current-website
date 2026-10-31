@@ -302,9 +302,8 @@ export const education = {
     school: "Anglia Ruskin University, Peterborough",
     detail: "Completed alongside full-time delivery at GSK.",
     period: "2022 – 2026",
-    /** Predicted, not conferred. Classification is confirmed on 10 September 2026. */
-    status: "Predicted First",
-    statusDetail: "330 of 360 credits complete, seven modules at First. Result due 10 September 2026.",
+    status: "First Class Honours",
+    statusDetail: "Awarded 2 September 2026. Overall 73%, eight modules at First.",
     highlights: [
       "Programming and Networking IoT Project | 83%",
       "Computer and Network Technologies | 83%",
